@@ -1,0 +1,753 @@
+/* =====================================================
+   RESET GENERAL
+===================================================== */
+
+/* 
+   Elimina márgenes y paddings por defecto
+   y evita problemas de tamaño.
+*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* 
+   Evita scroll horizontal accidental.
+*/
+body{
+    overflow-x:hidden;
+}
+
+/* 
+   Configuración general del body.
+*/
+body{
+    font-family:Arial, sans-serif;
+    background-color:#F5F1E9;
+    color:#26382E;
+}
+
+/* 
+   Hace las imágenes responsivas.
+*/
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* =====================================================
+   HEADER / MENÚ
+===================================================== */
+
+/* Contenedor del header */
+.header{
+    width:100%;
+    background:#26382E;
+    padding:15px 5%;
+}
+
+/* Menú principal */
+.menu{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* Links del menú */
+.menu a{
+    text-decoration:none;
+    color:#F5F1E9;
+    padding:10px 16px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+/* Hover menú */
+.menu a:hover{
+    background:#31483B;
+}
+
+/* Logo */
+.logo{
+    width:80px;
+}
+
+/* =====================================================
+   BANNER PRINCIPAL
+===================================================== */
+
+/* Sección banner */
+.banner-seccion{
+
+    width:100%;
+
+    min-height:420px;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)),
+        url('Imagenes/CAFE.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+/* Contenedor texto banner */
+.banner-overlay{
+    color:#F5F1E9;
+    padding:10px 20px;
+}
+
+/* Subtítulo banner */
+.banner-subtitulo{
+
+    font-size:1rem;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#BFD9C3;
+
+    margin-bottom:10px;
+}
+
+/* Título banner */
+.banner-titulo{
+
+    font-size:4rem;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+    line-height:1.2;
+}
+
+/* Descripción banner */
+.banner-descripcion{
+
+    font-size:1.2rem;
+
+    color:#d4c9bb;
+
+    font-style:italic;
+}
+
+/* =====================================================
+   ENCABEZADO DE SECCIÓN
+===================================================== */
+
+.seccion-encabezado{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+/* Título sección */
+.seccion-encabezado h2{
+
+    font-size:2.2rem;
+
+    color:#26382E;
+
+    margin-bottom:8px;
+}
+
+/* Subtexto sección */
+.seccion-encabezado p{
+
+    font-size:1rem;
+
+    color:#6b5c52;
+
+    font-style:italic;
+}
+
+/* =====================================================
+   SECCIÓN INFORMACIÓN
+===================================================== */
+
+.seccion-info-doble{
+
+    padding:60px 5%;
+
+    background-color:#F5F1E9;
+}
+
+/* Contenedor flex */
+.contenedor-columnas{
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+}
+
+/* Columnas */
+.columna-cuadro{
+
+    flex:1 1 300px;
+
+    width:100%;
+
+    max-width:500px;
+
+    text-align:center;
+
+    min-width:0;
+}
+
+/* =====================================================
+   TÍTULOS E ÍCONOS
+===================================================== */
+
+/* Ícono */
+.icono-titulo{
+
+    font-size:2.5rem;
+
+    margin-bottom:8px;
+}
+
+/* Título */
+.titulo-seccion{
+
+    font-size:1.4rem;
+
+    color:#26382E;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.cuadro-azul{
+
+    background-color:#EDE0D4;
+
+    border:2px solid #26382E;
+
+    border-radius:20px;
+
+    padding:25px 30px;
+
+    min-height:300px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.1);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover */
+.cuadro-azul:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* =====================================================
+   HORARIOS
+===================================================== */
+
+/* Filas */
+.horario-fila{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:10px 5px;
+
+    border-bottom:
+        1px solid rgba(38,56,46,0.15);
+}
+
+/* Última fila */
+.horario-fila:last-of-type{
+    border-bottom:none;
+}
+
+/* Destacado */
+.horario-fila.destacado{
+
+    background-color:
+        rgba(38,56,46,0.08);
+
+    border-radius:8px;
+
+    padding:10px;
+}
+
+/* Día */
+.dia{
+
+    font-weight:bold;
+
+    color:#26382E;
+
+    font-size:0.95rem;
+
+    min-width:90px;
+
+    text-align:left;
+}
+
+/* Línea separadora */
+.separador{
+
+    flex:1;
+
+    border-bottom:
+        1px dashed rgba(38,56,46,0.3);
+
+    margin:0 10px;
+}
+
+/* Hora */
+.hora{
+
+    color:#4e342e;
+
+    font-size:0.95rem;
+
+    text-align:right;
+}
+
+/* Nota */
+.nota-horario{
+
+    font-size:0.8rem;
+
+    color:#888;
+
+    margin-top:15px;
+
+    font-style:italic;
+}
+
+/* =====================================================
+   DIRECCIÓN
+===================================================== */
+
+.direccion-card{
+    margin-bottom:20px;
+}
+
+/* Dirección principal */
+.texto-direccion{
+
+    font-size:1.6rem;
+
+    font-weight:bold;
+
+    color:#26382E;
+
+    margin-bottom:4px;
+}
+
+/* Ciudad */
+.texto-ciudad{
+
+    font-size:1rem;
+
+    color:#4e342e;
+
+    margin-bottom:10px;
+}
+
+/* Referencia */
+.texto-referencia{
+
+    font-size:0.9rem;
+
+    color:#6b5c52;
+
+    font-style:italic;
+}
+
+/* =====================================================
+   MAPA
+===================================================== */
+
+.contenedor-mapa{
+
+    width:100%;
+
+    height:250px;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    border:2px solid #26382E;
+}
+
+/* Iframe */
+.contenedor-mapa iframe{
+
+    width:100%;
+
+    height:100%;
+
+    border:0;
+
+    display:block;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.f-pie{
+
+    background:#26382E;
+
+    color:#F5F1E9;
+
+    padding:30px 5%;
+
+    font-family:sans-serif;
+}
+
+/* Fila footer */
+.f-fila{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+}
+
+/* Columnas */
+.f-columna{
+
+    flex:1;
+
+    min-width:200px;
+}
+
+/* Título principal */
+.f-pie h2{
+
+    font-size:1.8rem;
+}
+
+/* Subtítulos */
+.f-pie h3{
+
+    margin-bottom:15px;
+}
+
+/* Texto */
+.f-pie p{
+
+    font-size:0.9rem;
+
+    margin:8px 0;
+}
+
+/* Derechos */
+.f-derechos{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    opacity:0.7;
+}
+
+/* Línea */
+.f-derechos hr{
+
+    border:0;
+
+    border-top:
+        1px solid rgba(255,255,255,0.1);
+
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   RESPONSIVE TABLETS
+===================================================== */
+
+@media screen and (max-width:768px){
+
+    /* ================= HEADER ================= */
+
+    /* Logo más pequeño */
+    .logo{
+        width:60px;
+    }
+
+    /* Menú responsive horizontal */
+    .menu{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:10px;
+        width:100%;
+        padding:10px;
+    }
+
+    /* Links del menú */
+    .menu a{
+        width:auto;
+        padding:8px 12px;
+        font-size:14px;
+        text-align:center;
+        border-radius:8px;
+        background:none;
+    }
+
+    /* ================= BANNER ================= */
+
+    /* Reduce tamaño del banner */
+    .banner-seccion{
+        min-height:300px;
+        height:auto;
+        padding:20px;
+    }
+
+    /* Título más pequeño */
+    .banner-titulo{
+        font-size:2.5rem;
+    }
+
+    /* Texto descripción */
+    .banner-descripcion{
+        font-size:1rem;
+    }
+
+    /* ================= COLUMNAS ================= */
+
+    /* Columnas en vertical */
+    .contenedor-columnas{
+        flex-direction:column;
+        align-items:center;
+        gap:40px;
+    }
+
+    /* Columnas más anchas */
+    .columna-cuadro{
+        width:90%;
+        max-width:100%;
+    }
+
+    /* ================= TARJETAS ================= */
+
+    /* Reduce padding */
+    .cuadro-azul{
+        padding:20px;
+        min-height:auto;
+    }
+
+    /* ================= MAPA ================= */
+
+    .contenedor-mapa{
+        height:220px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    /* Footer vertical */
+    .f-fila{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    /* Columnas footer */
+    .f-columna{
+        width:100%;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE CELULARES
+===================================================== */
+
+@media screen and (max-width:480px){
+
+    /* ================= HEADER ================= */
+
+    /* Logo pequeño */
+    .logo{
+        width:50px;
+    }
+
+    /* Menú */
+    .menu{
+        gap:8px;
+        padding:8px;
+    }
+
+    /* Links */
+    .menu a{
+        font-size:13px;
+        padding:6px 10px;
+    }
+
+    /* ================= BANNER ================= */
+
+    /* Banner más pequeño */
+    .banner-seccion{
+        min-height:240px;
+        padding:15px;
+    }
+
+    /* Subtítulo */
+    .banner-subtitulo{
+        font-size:0.75rem;
+        letter-spacing:2px;
+    }
+
+    /* Título */
+    .banner-titulo{
+        font-size:1.8rem;
+        line-height:1.2;
+    }
+
+    /* Descripción */
+    .banner-descripcion{
+        font-size:0.9rem;
+    }
+
+    /* ================= ENCABEZADOS ================= */
+
+    .seccion-encabezado h2{
+        font-size:1.6rem;
+    }
+
+    .seccion-encabezado p{
+        font-size:0.9rem;
+    }
+
+    /* ================= COLUMNAS ================= */
+
+    .columna-cuadro{
+        width:100%;
+    }
+
+    /* ================= TARJETAS ================= */
+
+    .cuadro-azul{
+        padding:16px;
+        border-radius:16px;
+    }
+
+    /* ================= HORARIOS ================= */
+
+    .horario-fila{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+    }
+
+    /* Oculta línea separadora */
+    .separador{
+        display:none;
+    }
+
+    /* Día */
+    .dia{
+        min-width:auto;
+        font-size:0.9rem;
+    }
+
+    /* Hora */
+    .hora{
+        text-align:left;
+        font-size:0.9rem;
+    }
+
+    /* ================= DIRECCIÓN ================= */
+
+    .texto-direccion{
+        font-size:1.2rem;
+    }
+
+    .texto-ciudad{
+        font-size:0.9rem;
+    }
+
+    .texto-referencia{
+        font-size:0.8rem;
+    }
+
+    /* ================= MAPA ================= */
+
+    .contenedor-mapa{
+        height:180px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .f-pie{
+        padding:25px 20px;
+    }
+
+    .f-pie h2{
+        font-size:1.4rem;
+    }
+
+    .f-pie h3{
+        font-size:1rem;
+    }
+
+    .f-pie p{
+        font-size:0.8rem;
+    }
+
+    .f-derechos{
+        font-size:0.75rem;
+    }
+}

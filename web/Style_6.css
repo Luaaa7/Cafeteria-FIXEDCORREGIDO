@@ -1,0 +1,694 @@
+/* =========================================================
+   RESET GENERAL
+========================================================= */
+
+/* 
+   Elimina márgenes y padding por defecto del navegador.
+   box-sizing:border-box hace que el padding y border
+   no aumenten el tamaño real del elemento.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+   Estilos globales del body.
+*/
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
+    background: #f5ede3; /* Color de fondo */
+    color: #3d2b1f; /* Color principal del texto */
+    height: 100%; /* Altura completa */
+    width: 100%; /* Anchura completa */
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+/* 
+   Contenedor principal de toda la página.
+*/
+.main {
+    max-width: 1200px; /* Máximo ancho */
+    margin: auto; /* Centrado horizontal */
+    padding: 0 24px 60px; /* Espaciado interno */
+}
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+========================================================= */
+
+/* 
+   Encabezado de la carta.
+*/
+.carta-header {
+    text-align: center; /* Centra el texto */
+    padding: 2.5rem 0 1.5rem; /* Espaciado superior e inferior */
+}
+
+/* 
+   Título principal.
+*/
+.carta-header h1 {
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-size: 2.8rem; /* Tamaño del texto */
+    color: #6b1e1e; /* Color vino */
+    letter-spacing: 0.04em; /* Separación entre letras */
+    margin-bottom: 6px; /* Espacio inferior */
+}
+
+/* =========================================================
+   SEPARADOR DECORATIVO
+========================================================= */
+
+/* 
+   Línea decorativa debajo del título.
+*/
+.divider-deco {
+    width: 60px; /* Ancho inicial */
+    height: 2px; /* Grosor */
+    
+    /* Degradado decorativo */
+    background: linear-gradient(to right, transparent, #c0845a, transparent);
+
+    margin: 0.5rem auto 0.9rem;
+
+    /* Animación suave */
+    transition:
+        width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity 0.2s ease;
+
+    opacity: 1;
+}
+
+/* 
+   Efecto hover del separador.
+*/
+.divider-deco:hover {
+    width: 160px; /* Aumenta ancho */
+    opacity: 1;
+}
+
+/* 
+   Texto descriptivo debajo del título.
+*/
+.text-carta {
+    font-size: 0.93rem;
+    color: #9a7a6a;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+/* 
+   Contenedor del buscador.
+*/
+.buscador-box {
+    display: flex; /* Flexbox */
+    align-items: center; /* Centrado vertical */
+
+    background: #fdf8f3;
+
+    border-radius: 50px; /* Bordes redondos */
+
+    padding: 10px 20px;
+
+    max-width: 540px;
+
+    margin: 1.4rem auto;
+
+    border: 1.5px solid #ddd0c5;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+/* 
+   Estilo cuando el input recibe focus.
+*/
+.buscador-box:focus-within {
+    border-color: #c0845a;
+
+    box-shadow:
+        0 0 0 3px rgba(192, 132, 90, 0.15);
+}
+
+/* 
+   Ícono del buscador.
+*/
+.buscador-box .icono {
+    font-size: 15px;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+/* 
+   Input del buscador.
+*/
+.buscador-box input {
+    border: none;
+    outline: none;
+
+    flex: 1;
+
+    background: transparent;
+
+    font-size: 0.93rem;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #5a3d2b;
+}
+
+/* 
+   Placeholder del input.
+*/
+.buscador-box input::placeholder {
+    color: #b09080;
+}
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+/* 
+   Contenedor de filtros superiores.
+*/
+.filtros-top {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 24px;
+
+    margin: 0 0 1.4rem;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+
+/* 
+   Grupo de filtros.
+*/
+.grupo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 
+   Texto de etiquetas.
+*/
+.grupo label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #5a3d2b;
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+/* 
+   Estilos del select.
+*/
+select {
+    padding: 7px 2rem 7px 12px;
+
+    border-radius: 30px;
+
+    border: 1.5px solid #d4bfb0;
+
+    /* Flecha personalizada */
+    background:
+        #fdf8f3
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23b09080'/%3E%3C/svg%3E")
+        no-repeat right 10px center;
+
+    background-size: 9px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 0.86rem;
+
+    color: #5a3d2b;
+
+    appearance: none;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: border-color 0.2s;
+}
+
+/* 
+   Focus del select.
+*/
+select:focus {
+    border-color: #c0845a;
+}
+
+/* =========================================================
+   BOTÓN ORDEN
+========================================================= */
+
+/* 
+   Botón para cambiar el orden.
+*/
+#toggleOrden {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    border: 1.5px solid #d4bfb0;
+
+    background: #fdf8f3;
+
+    color: #8a6a55;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.18s,
+        border-color 0.18s;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 
+   Hover del botón.
+*/
+#toggleOrden:hover {
+    background: #e8d5c4;
+    border-color: #c0845a;
+}
+
+/* =========================================================
+   CATEGORÍAS
+========================================================= */
+
+/* 
+   Contenedor de categorías.
+*/
+.categorias {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 2rem;
+}
+
+/* 
+   Botones de categorías.
+*/
+.chip {
+    background: #faeee0;
+
+    border: 1.5px solid #d4bfb0;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    font-weight: 500;
+
+    font-size: 0.86rem;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #7a5c48;
+
+    white-space: nowrap;
+}
+
+/* 
+   Hover de categorías.
+*/
+.chip:hover {
+    background: #efd9c5;
+
+    border-color: #c0845a;
+
+    color: #5a3d2b;
+
+    transform: scale(1.04);
+}
+
+/* 
+   Categoría activa.
+*/
+.chip.activo {
+    background: #7a3c1e;
+
+    border-color: #7a3c1e;
+
+    color: #fdf0e6;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 4px 12px rgba(122, 60, 30, 0.25);
+}
+
+/* =========================================================
+   GRID PRODUCTOS
+========================================================= */
+
+/* 
+   Grid responsive de productos.
+*/
+.contenedor-productos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(230px, 1fr));
+
+    gap: 22px;
+
+    padding: 4px 0;
+}
+
+/* =========================================================
+   CARD PRODUCTO
+========================================================= */
+
+/* 
+   Tarjeta individual.
+*/
+.card {
+    background: #fff8f2;
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    border: 1.5px solid #ead8cc;
+
+    position: relative;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+/* 
+   Hover de tarjeta.
+*/
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 28px rgba(100, 50, 20, 0.12);
+}
+
+/* 
+   Imagen del producto.
+*/
+.card img {
+    width: 100%;
+
+    height: 170px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+}
+
+/* 
+   Nombre del producto.
+*/
+.card h3 {
+    margin: 4px 0 6px;
+
+    font-size: 0.97rem;
+
+    font-weight: 600;
+
+    color: #4a2c1a;
+
+    text-align: center;
+
+    line-height: 1.3;
+}
+
+/* 
+   Descripción.
+*/
+.card .text-card {
+    color: #9a7a6a;
+
+    font-size: 0.80rem;
+
+    font-weight: 300;
+
+    text-align: center;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+
+    flex: 1;
+}
+
+/* 
+   Precio.
+*/
+.card p:not(.text-card) {
+    color: #7a3c1e;
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    margin-top: auto;
+}
+
+/* =========================================================
+   FAVORITOS
+========================================================= */
+
+/* 
+   Botón favorito.
+*/
+.fav-btn {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    background: #fff8f2;
+
+    border: 1.5px solid #e0c8b8;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s;
+
+    line-height: 1;
+}
+
+/* 
+   Hover favorito.
+*/
+.fav-btn:hover {
+    background: #fdd5c8;
+
+    border-color: #e87050;
+
+    transform: scale(1.15);
+}
+
+/* 
+   Favorito activo.
+*/
+.fav-btn.activo {
+    color: #e84040;
+
+    background: #fce8e8;
+
+    border-color: #e84040;
+}
+
+/* =========================================================
+   ANIMACIÓN CORAZÓN
+========================================================= */
+
+@keyframes heart-pop {
+
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.45);
+    }
+
+    60% {
+        transform: scale(0.88);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 
+   Clase para animar el corazón.
+*/
+.fav-btn.pop {
+    animation:
+        heart-pop 0.35s
+        cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* =========================================================
+   RESPONSIVE - LAPTOPS
+========================================================= */
+
+@media (max-width:1024px){
+
+    .main{
+        padding:0 20px 50px;
+    }
+
+    .carta-header h1{
+        font-size:2.4rem;
+    }
+
+    .text-carta{
+        font-size:0.9rem;
+    }
+
+    .buscador-box{
+        max-width:480px;
+        padding:10px 18px;
+    }
+
+    .contenedor-productos{
+        grid-template-columns:
+        repeat(auto-fill,minmax(220px,1fr));
+
+        gap:20px;
+    }
+
+    .card img{
+        height:160px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE - TABLETS
+========================================================= */
+
+@media (max-width:768px){
+
+    .main{
+        padding:0 16px 40px;
+    }
+
+    .carta-header h1{
+        font-size:2rem;
+    }
+
+    .filtros-top{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .grupo{
+        width:100%;
+        justify-content:center;
+    }
+
+    .contenedor-productos{
+        grid-template-columns:
+        repeat(auto-fill,minmax(180px,1fr));
+
+        gap:18px;
+    }
+
+    .card img{
+        height:140px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE - CELULARES
+========================================================= */
+
+@media (max-width:480px){
+
+    .main{
+        padding:0 12px 35px;
+    }
+
+    .carta-header h1{
+        font-size:1.7rem;
+        line-height:1.2;
+    }
+
+    .text-carta{
+        font-size:0.8rem;
+        line-height:1.5;
+    }
+
+    .contenedor-productos{
+        grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+    .card img{
+        height:130px;
+    }
+
+    .fav-btn{
+        width:30px;
+        height:30px;
+    }
+}

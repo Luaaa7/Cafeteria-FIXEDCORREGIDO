@@ -1,0 +1,425 @@
+
+
+
+/* Encabezado */
+
+
+ 
+
+/* Estilos globales */
+body{
+    font-family:'Arial'; 
+    margin:0;                       
+    padding:0;   /* Le quita el espacio o aumenta al texto */                   
+    color:#26382E;                   
+    background-color:#F5F1E9;        
+    height:100%; /*Altura*/
+    width:100%; 
+}
+
+/* Contenedor principal */
+.container{
+                 
+    margin:auto;             
+    padding:0px;                    
+}
+
+.banner-img {
+    width: 100%; /*Ancho*/
+    height: 100vh; /* <--- CRÍTICO: Si no pones altura, el texto empuja la imagen hacia abajo */
+    
+    /* Imagen y capa oscura */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                /*Linear-gradient: crea un degradado de colores en línea recta*/
+                url('Imagenes/Imagen1_1.jpeg'); 
+    background-size: cover;
+    background-position: center;
+
+    /* CENTRADO TOTAL */
+    display: flex;           /* Convierte el div en un contenedor flexible */
+    justify-content: center; /* Centra el texto de izquierda a derecha */
+    align-items: center;     /* Centra el texto de ARRIBA a ABAJO */
+    text-align: center;
+}
+
+.banner-text {
+    color: #F5F1E9; /* Tu color crema */
+    padding: 20px;
+}
+
+.banner-text h1 {
+    font-size: 7rem;      
+    font-weight: bold;    /* negrita */
+    margin: 0;
+}
+
+.banner-text p {
+    font-size: 2rem;    /* Hace el subtítulo más legible */
+}
+
+/* Sección de contenido */
+.content1{
+    background-color:transparent; /* CAMBIO: Para que luzca el fondo crema del body */
+    margin: 40px auto;
+    padding: 40px 10%;               
+    display:flex;            
+    justify-content:center; 
+    align-items:flex-start; /*alinea los elementos al inicio del contenedor*/
+    gap:40px;               
+}
+/* Estilo para el título en Laptop */
+.content1 h1 {
+    font-size: 3rem; /* Tamaño grande para PC */
+    margin-bottom: 10px;
+    color: #2c1b0e; 
+}
+
+/* Estilo para el párrafo en Laptop */
+.content1 p {
+    font-size: 1.5rem;
+    color: #4e342e;
+}
+
+.left-column,.right-column {
+    flex: 1; /* Toma la mitad del espacio */
+    text-align: left;
+    position: relative;
+    align-self: center; /*centra un elemento específico*/
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img2, .img3 {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    height: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+
+.content2 {
+    background: #26382E;
+    color: #fff;
+    margin: 50px auto;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.content2 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px; /*Espacio debajo del elemento*/
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que bajen en celular automáticamente */
+}
+
+.card {
+    flex: 1;
+    min-width: 250px; /* Evita que las tarjetas sean demasiado flacas */
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ede5e1;
+}
+
+.card-img{
+    width:30px; /* Tamaño del logo */
+    vertical-align:middle; /* Alinea el logo con el texto en la misma línea */
+}
+
+.content3 {
+  display: flex; /* Divide en dos columnas */
+  gap: 150px;
+  align-items: center;
+  font-family: sans-serif;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 60px 8%;
+}
+
+/* Contenido de texto */
+.content3 h1 { 
+    font-family: arial;
+    font-size: 3rem;
+    margin: 10px 0; 
+}
+
+.content3 p { 
+    font-family: arial;
+    font-size: 1.5rem;
+    margin: 10px 0; 
+}
+
+/* Fila de números */
+.fila-datos {
+  display: flex; 
+  gap: 30px; 
+  margin: 25px 0; 
+  border-top: 1px solid #ddd; 
+  padding-top: 15px;
+}
+
+/* Botón simple */
+.boton {
+  display: inline-block;
+  background: #26382E;
+  color: #F5F1E9;
+  padding: 12px 24px;
+  text-decoration: none; /*Eliminar decoraciones, subrayado de enlace*/
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.boton:hover {
+    background: #BFD9C3;
+    color: #26382E;
+    transform: scale(1.05); /*Scale deforma el elemento 1 tamaño normal, 5% más grande*/
+}
+
+.contenedor-botones {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+    margin-top: 20px;
+}
+
+/* LAPTOPS */
+@media (max-width:1024px){
+
+    .banner-text h1{
+        font-size:70px;
+    }
+
+    .banner-text p{
+        font-size:35px;
+    }
+    
+    .banner-img{
+        height:75vh;
+    }
+
+    .content1 h1,
+    .content3 h1{
+        font-size:35px;
+    }
+
+    .content1 p,
+    .content3 p{
+        font-size:19px;
+    }
+
+    .content2 h2{
+        font-size:38px;
+    }
+
+    .card h3{
+        font-size:24px;
+    }
+
+    .card p{
+        font-size:17px;
+    }
+
+    .fila-datos h2{
+        font-size:30px;
+    }
+
+    .fila-datos p{
+        font-size:17px;
+    }
+
+    .boton{
+        font-size:17px;
+    }
+}
+
+
+/* TABLETS */
+@media (max-width:768px){
+
+    .banner-img{
+        height:55vh;
+    }
+
+    .banner-text h1{
+        font-size:45px;
+    }
+
+    .banner-text p{
+        font-size:18px;
+    }
+
+    .content1 h1,
+    .content3 h1{
+        font-size:32px;
+    }
+
+    .content1 p,
+    .content3 p{
+        font-size:17px;
+    }
+
+    .content2 h2{
+        font-size:30px;
+    }
+
+    .card h3{
+        font-size:21px;
+    }
+
+    .card p{
+        font-size:15px;
+    }
+
+    .fila-datos h2{
+        font-size:25px;
+    }
+
+    .fila-datos p{
+        font-size:15px;
+    }
+
+    .boton{
+        font-size:15px;
+        padding:12px 20px;
+    }
+
+    .img2,
+    .img3{
+        width:100%;
+        height:350px;
+    }
+
+    .content1,
+    .content3{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+
+    .fila-datos{
+    display:flex;
+    gap:20px;
+    }
+}
+
+/* CELULARES */
+@media (max-width:480px){
+
+    
+
+    .banner-img{
+        height:52vh;
+        background-position:center;
+    }
+
+    .banner-text h1{
+        font-size:50px;
+        line-height:1.2;
+    }
+
+    .banner-text p{
+        font-size:18px;
+    }
+
+    .content1 h1,
+    .content3 h1{
+        font-size:25px;
+    }
+
+    .content1 p,
+    .content3 p{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .content2 h2{
+        font-size:25px;
+    }
+
+    .card h3{
+        font-size:19px;
+    }
+
+    .card p{
+        font-size:14px;
+    }
+
+    .fila-datos h2{
+        font-size:22px;
+    }
+
+    .fila-datos p{
+        font-size:14px;
+    }
+
+    .boton{
+        width:98%;
+        text-align:center;
+        font-size:14px;
+        padding:12px;
+    }
+
+    /* IMÁGENES MEJOR AJUSTADAS */
+    .img2,
+    .img3{
+        display:block; /*Para que ocupe toda la linea*/
+        width:100%;
+        max-width:360px;
+        aspect-ratio:4/3;
+        margin:0 auto;
+        object-fit:cover;  /*hace que la imagen llene el espacio sin deformarse*/
+        object-position:center; /*centra la imagen dentro del espacio*/
+        border-radius:15px;
+    }
+
+    /* CONTENEDORES */
+    .content1,
+    .content3{
+        flex-direction:column;
+        align-items:center;
+        text-align:left;
+        gap:30px;
+        padding:35px 7%;
+    }
+
+    .left-column,
+    .right-column{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .contenedor-botones{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:100%;
+    }
+
+    .fila-datos{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+        flex-direction:row;
+    }
+}
