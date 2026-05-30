@@ -24,8 +24,8 @@
         </nav>
     </header>
 
-    <div class="main">
-        <section class="carta">
+    <div class="main"><!--- Contenedor principal --->
+        <section class="carta"><!--- Sección de la carta de productos --->
 
             <div class="carta-header">
                 <h1>Carta</h1>
@@ -73,7 +73,7 @@
                 <button class="chip" id="verFavoritos">❤️ Ver favoritos</button>
             </div>
 
-            <div class="contenedor-productos">
+            <div class="contenedor-productos"><!--- Contenedor de productos --->
 
                 <!-- ===== CLÁSICOS ===== -->
                 <div class="card" data-id="1" data-nombre="Café Espresso" data-categoria="clasicos" data-estacion="invierno" data-precio="10" data-fecha="2025-01-10">
@@ -397,14 +397,14 @@
 
     <!--  Script  -->
     <script>
-        const chips = document.querySelectorAll(".chip");
-        const buscador = document.getElementById("buscador");
-        const ordenar = document.getElementById("ordenar");
-        const estacion = document.getElementById("estacion");
-        const toggleOrden = document.getElementById("toggleOrden");
-        let ascendente = true;
-        let categoriaActiva = "all";
-        let mostrandoFavoritos = false;
+        const chips = document.querySelectorAll(".chip");/* BOTONES DE CATEGORÍA */
+        const buscador = document.getElementById("buscador");/* BUSCADOR */
+        const ordenar = document.getElementById("ordenar");/* SELECT DE ORDEN */
+        const estacion = document.getElementById("estacion");/* SELECT DE ESTACIÓN */
+        const toggleOrden = document.getElementById("toggleOrden");/* BOTÓN DE TOGGLE ORDEN */
+        let ascendente = true;/* ORDEN INICIAL */
+        let categoriaActiva = "all";/* CATEGORÍA INICIAL */
+        let mostrandoFavoritos = false;/* ESTADO DE FAVORITOS */
 
         /* FAVORITOS desde localStorage */
         let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];

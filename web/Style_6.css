@@ -1,7 +1,6 @@
 /* =========================================================
    RESET GENERAL
 ========================================================= */
-
 /* 
    Elimina márgenes y padding por defecto del navegador.
    box-sizing:border-box hace que el padding y border
@@ -105,7 +104,6 @@ body {
 /* =========================================================
    BUSCADOR
 ========================================================= */
-
 /* 
    Contenedor del buscador.
 */
@@ -117,7 +115,7 @@ body {
 
     border-radius: 50px; /* Bordes redondos */
 
-    padding: 10px 20px;
+    padding: 10px 20px;/* Espaciado interno */
 
     max-width: 540px;
 
@@ -125,7 +123,7 @@ body {
 
     border: 1.5px solid #ddd0c5;
 
-    transition:
+    transition:/* Transiciones suaves para interacciones */
         border-color 0.2s,
         box-shadow 0.2s;
 }
@@ -134,10 +132,10 @@ body {
    Estilo cuando el input recibe focus.
 */
 .buscador-box:focus-within {
-    border-color: #c0845a;
+    border-color: #c0845a;/* Cambia el color del borde al enfocar */
 
     box-shadow:
-        0 0 0 3px rgba(192, 132, 90, 0.15);
+        0 0 0 3px rgba(192, 132, 90, 0.15);/* Sombra suave alrededor del buscador */
 }
 
 /* 
@@ -170,27 +168,26 @@ body {
 /* 
    Placeholder del input.
 */
-.buscador-box input::placeholder {
+.buscador-box input::placeholder {/* Color del texto de placeholder */
     color: #b09080;
 }
 
 /* =========================================================
    FILTROS
 ========================================================= */
-
 /* 
    Contenedor de filtros superiores.
 */
 .filtros-top {
-    display: flex;
+    display: flex;/* Flexbox para organizar los filtros */
 
     justify-content: center;
 
-    gap: 24px;
+    gap: 24px;/* Espacio entre grupos de filtros */
 
     margin: 0 0 1.4rem;
 
-    flex-wrap: wrap;
+    flex-wrap: wrap;/* Permite que los filtros se ajusten en pantallas pequeñas */
 
     align-items: center;
 }
@@ -198,7 +195,7 @@ body {
 /* 
    Grupo de filtros.
 */
-.grupo {
+.grupo {/* Flexbox para organizar etiqueta y select */
     display: flex;
     align-items: center;
     gap: 8px;
@@ -207,7 +204,7 @@ body {
 /* 
    Texto de etiquetas.
 */
-.grupo label {
+.grupo label {/* Estilo de las etiquetas de los filtros */
     font-size: 0.88rem;
     font-weight: 600;
     color: #5a3d2b;
@@ -241,11 +238,11 @@ select {
 
     color: #5a3d2b;
 
-    appearance: none;
+    appearance: none;/* Elimina estilos por defecto del select */
 
-    cursor: pointer;
+    cursor: pointer;/* Cambia el cursor al pasar sobre el select */
 
-    outline: none;
+    outline: none;/* Elimina el contorno por defecto al enfocar */
 
     transition: border-color 0.2s;
 }
@@ -253,18 +250,17 @@ select {
 /* 
    Focus del select.
 */
-select:focus {
+select:focus {/* Cambia el color del borde al enfocar el select */
     border-color: #c0845a;
 }
 
 /* =========================================================
    BOTÓN ORDEN
 ========================================================= */
-
 /* 
    Botón para cambiar el orden.
 */
-#toggleOrden {
+#toggleOrden {/* Botón circular para cambiar el orden de los productos */
     width: 34px;
     height: 34px;
 
@@ -278,7 +274,7 @@ select:focus {
 
     font-size: 1rem;
 
-    cursor: pointer;
+    cursor: pointer;/* Cambia el cursor al pasar sobre el botón */
 
     display: flex;
 
@@ -295,7 +291,7 @@ select:focus {
 /* 
    Hover del botón.
 */
-#toggleOrden:hover {
+#toggleOrden:hover {/* Efecto hover para el botón de orden */
     background: #e8d5c4;
     border-color: #c0845a;
 }
@@ -303,11 +299,10 @@ select:focus {
 /* =========================================================
    CATEGORÍAS
 ========================================================= */
-
 /* 
    Contenedor de categorías.
 */
-.categorias {
+.categorias {/* Flexbox para organizar los botones de categorías */
     display: flex;
 
     justify-content: center;
@@ -322,7 +317,7 @@ select:focus {
 /* 
    Botones de categorías.
 */
-.chip {
+.chip {/* Estilo de los botones de categorías tipo "chip" */
     background: #faeee0;
 
     border: 1.5px solid #d4bfb0;
@@ -349,7 +344,7 @@ select:focus {
 /* 
    Hover de categorías.
 */
-.chip:hover {
+.chip:hover {/* Efecto hover para los botones de categorías */
     background: #efd9c5;
 
     border-color: #c0845a;
@@ -362,7 +357,7 @@ select:focus {
 /* 
    Categoría activa.
 */
-.chip.activo {
+.chip.activo {/* Estilo para la categoría activa */
     background: #7a3c1e;
 
     border-color: #7a3c1e;
@@ -383,7 +378,7 @@ select:focus {
    Grid responsive de productos.
 */
 .contenedor-productos {
-    display: grid;
+    display: grid;/* Grid para organizar los productos */
 
     grid-template-columns:
         repeat(auto-fill, minmax(230px, 1fr));
@@ -400,7 +395,7 @@ select:focus {
 /* 
    Tarjeta individual.
 */
-.card {
+.card {/* Estilo de las tarjetas de productos */
     background: #fff8f2;
 
     border-radius: 16px;
@@ -435,7 +430,7 @@ select:focus {
 /* 
    Imagen del producto.
 */
-.card img {
+.card img {/* Estilo de la imagen dentro de la tarjeta */
     width: 100%;
 
     height: 170px;
@@ -503,7 +498,7 @@ select:focus {
 /* 
    Botón favorito.
 */
-.fav-btn {
+.fav-btn {/* Estilo del botón de favorito (corazón) */
     position: absolute;
 
     top: 12px;
@@ -580,7 +575,7 @@ select:focus {
 /* 
    Clase para animar el corazón.
 */
-.fav-btn.pop {
+.fav-btn.pop {/* Clase que se agrega al botón de favorito para activar la animación de "pop" */
     animation:
         heart-pop 0.35s
         cubic-bezier(0.36, 0.07, 0.19, 0.97);
