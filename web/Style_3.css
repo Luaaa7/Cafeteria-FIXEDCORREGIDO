@@ -1,25 +1,27 @@
-/* BODY */
-/* Estilo de toda la página */
+/* ================== BODY ================== */
+
+/* Estilos generales de toda la página */
 body {
-    font-family: 'Jost', 'Segoe UI', sans-serif;
-    margin: 0; /* márgenes externos */
-    padding: 0; /* espacios internos */
-    color: #26382E; /* Color principal */
-    background-color: #F5F1E9;
-    height:100%; /* Altura */
-    width:100%;  /* Ancho */
+    font-family: 'Jost', 'Segoe UI', sans-serif; /* Fuente principal */
+    margin: 0; /* Elimina márgenes externos */
+    padding: 0; /* Elimina espacios internos */
+    color: #26382E; /* Color principal del texto */
+    background-color: #F5F1E9; /* Color de fondo de la página */
+    height:100%; /* Altura completa */
+    width:100%;  /* Anchura completa */
 }
 
-/* CONTENEDOR */
+/* ================== CONTENEDOR ================== */
+
 /* Contenedor general */
 .container {
     width: 100%; /* Ocupa todo el ancho */
     margin: auto; /* Centra el contenido */
 }
 
-/* BANNER */
+/* ================== BANNER ================== */
 
-/* Imagen del banner */
+/* Imagen principal del banner */
 .banner-img {
     width: 100%; /* Ocupa todo el ancho */
     height: 55vh; /* Altura del banner usando viewport */
@@ -115,6 +117,41 @@ body {
     max-width: 440px;
     margin: 0 auto;
     line-height: 1.7;
+}
+
+/* ================== SEPARADOR DECORATIVO ================== */
+
+/* Contenedor del separador */
+.divider-deco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px; /* Espacio entre elementos */
+    margin: 16px auto 18px;
+}
+
+/* Líneas laterales del separador */
+.divider-deco::before,
+.divider-deco::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #E5D7CC);
+}
+
+/* Línea derecha invertida */
+.divider-deco::after {
+    background: linear-gradient(to left, transparent, #E5D7CC);
+}
+
+/* Punto central del separador */
+.divider-deco-inner {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%; /* Lo convierte en círculo */
+    background: #A86D49;
 }
 
 /* ================== GRID DE TARJETAS ================== */
