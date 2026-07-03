@@ -393,6 +393,7 @@ tfoot td {
         font-size: 0.95rem;
     }
 }
+
 /* CONTROLES JS */
 
 /* Wrapper de la sección de filtros */
@@ -528,8 +529,122 @@ tfoot td {
 .promo-card.destacada .promo-img-wrap {
     border-radius: 16px 16px 0 0;
 }
+
 /* Esquinas inferiores de tarjeta destacada */
 .promo-card.destacada table {
     border-radius: 0 0 16px 16px;
     overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   SELECTOR DE FESTIVIDADES - ESTILOS PARA CLIENTE
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+/* VARIABLES CSS PARA FESTIVIDADES */
+:root {
+    --loyalty-primary: #A86D49;
+    --loyalty-secondary: #26382E;
+    --loyalty-bg: #F5F1E9;
+    --loyalty-text: #26382E;
+    --loyalty-border: #E5D7CC;
+    --loyalty-shadow: rgba(38, 56, 46, 0.1);
+}
+
+/* JULIO - Fiestas Patrias */
+body.tema-julio {
+    --loyalty-primary: #C41E3A;
+    --loyalty-secondary: #FFFFFF;
+}
+
+/* OCTUBRE - Señor de los Milagros */
+body.tema-octubre {
+    --loyalty-primary: #663399;
+    --loyalty-secondary: #663399;
+}
+
+/* NOVIEMBRE - Canción Criolla */
+body.tema-noviembre {
+    --loyalty-primary: #8B4513;
+    --loyalty-secondary: #5C3317;
+}
+
+/* DICIEMBRE - Navidad */
+body.tema-diciembre {
+    --loyalty-primary: #0F7938;
+    --loyalty-secondary: #0F7938;
+}
+
+/* SELECTOR DE FESTIVIDAD */
+.festividad-selector {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 35px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 16px var(--loyalty-shadow);
+    border-left: 5px solid var(--loyalty-primary);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.festividad-selector h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--loyalty-primary);
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.form-group {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #667E6B;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.form-group select {
+    font-family: 'Jost', sans-serif;
+    padding: 10px 14px;
+    border: 2px solid var(--loyalty-border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: white;
+    color: var(--loyalty-text);
+    cursor: pointer;
+    min-width: 280px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--loyalty-primary);
+    box-shadow: 0 0 0 3px rgba(168, 109, 73, 0.1);
+}
+
+/* RESPONSIVE FESTIVIDAD */
+@media (max-width: 768px) {
+    .festividad-selector {
+        padding: 20px;
+        margin: 25px auto;
+    }
+
+    .form-group select {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .festividad-selector h3 {
+        font-size: 1rem;
+    }
 }

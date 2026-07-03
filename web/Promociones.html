@@ -9,13 +9,10 @@
     <link href="Style_Footer.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-        <style>
+    <style>
         /* ESTILOS QUE JAVASCRIPT ACTIVA/DESACTIVA */
-
-        /* Tarjeta oculta por filtro */
         .promo-card.oculta { display: none; }
 
-        /* Tarjeta destacada del mes (JS agrega esta clase) */
         .promo-card.destacada {
             box-shadow: 0 8px 32px rgba(168,109,73,0.22), 0 0 0 2px #A86D49;
             position: relative;
@@ -23,7 +20,6 @@
             border-radius: 16px;
         }
 
-        /* Badge del mes (JS lo crea dinámicamente) */
         .badge-mes {
             position: absolute;
             top: -14px;
@@ -43,7 +39,6 @@
             box-shadow: 0 2px 8px rgba(168,109,73,0.35);
         }
 
-        /* Toast (JS lo muestra/oculta) */
         #toast {
             position: fixed;
             bottom: 32px;
@@ -65,11 +60,9 @@
         }
         #toast.visible { opacity: 1; transform: translateY(0); }
 
-        /* Botón activo (JS agrega esta clase) */
         .btn-js.activo { color: #A86D49; }
         .btn-js.activo::after { width: 100%; }
 
-        /* Contador (JS actualiza su texto) */
         #contador-resultado {
             text-align: center;
             font-family: 'Cormorant Garamond', Georgia, serif;
@@ -80,12 +73,85 @@
             letter-spacing: 0.04em;
             min-height: 26px;
         }
+
+        /* ═══════ PRECIOS Y DESCUENTOS ═══════ */
+        .precio-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 8px 0;
+            flex-wrap: wrap;
+        }
+        .precio-original {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            color: #999;
+            text-decoration: line-through;
+            font-weight: 300;
+        }
+        .precio-descuento {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #C41E3A;
+            letter-spacing: 0.02em;
+        }
+        .descuento-badge {
+            background: linear-gradient(135deg, #C41E3A, #e53935);
+            color: white;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        /* ═══════ COLORES DE MESES ═══════ */
+        .promo-card[data-mes="1"] thead { background: linear-gradient(135deg, #1a3a52, #2d5a7b); }
+        .promo-card[data-mes="1"] tfoot { background: linear-gradient(to bottom, #e8f0f7, #d4e4f0); }
+
+        .promo-card[data-mes="2"] thead { background: linear-gradient(135deg, #c2185b, #e91e63); }
+        .promo-card[data-mes="2"] tfoot { background: linear-gradient(to bottom, #fce4ec, #f8bbd0); }
+
+        .promo-card[data-mes="3"] thead { background: linear-gradient(135deg, #2e7d32, #4caf50); }
+        .promo-card[data-mes="3"] tfoot { background: linear-gradient(to bottom, #e8f5e9, #c8e6c9); }
+
+        .promo-card[data-mes="4"] thead { background: linear-gradient(135deg, #f57f17, #fbc02d); }
+        .promo-card[data-mes="4"] tfoot { background: linear-gradient(to bottom, #fffde7, #fff9c4); }
+        .promo-card[data-mes="4"] tfoot td { color: #333; }
+
+        .promo-card[data-mes="5"] thead { background: linear-gradient(135deg, #00796b, #009688); }
+        .promo-card[data-mes="5"] tfoot { background: linear-gradient(to bottom, #e0f2f1, #b2dfdb); }
+
+        .promo-card[data-mes="6"] thead { background: linear-gradient(135deg, #e65100, #ff6f00); }
+        .promo-card[data-mes="6"] tfoot { background: linear-gradient(to bottom, #ffe0b2, #ffd699); }
+
+        .promo-card[data-mes="7"] thead { background: linear-gradient(135deg, #c41e3a, #e53935); }
+        .promo-card[data-mes="7"] tfoot { background: linear-gradient(to bottom, #ffebee, #ffcdd2); }
+
+        .promo-card[data-mes="8"] thead { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+        .promo-card[data-mes="8"] tfoot { background: linear-gradient(to bottom, #f3e5f5, #e1bee7); }
+
+        .promo-card[data-mes="9"] thead { background: linear-gradient(135deg, #5d4037, #795548); }
+        .promo-card[data-mes="9"] tfoot { background: linear-gradient(to bottom, #efebe9, #d7ccc8); }
+
+        .promo-card[data-mes="10"] thead { background: linear-gradient(135deg, #663399, #9c27b0); }
+        .promo-card[data-mes="10"] tfoot { background: linear-gradient(to bottom, #f3e5f5, #e1bee7); }
+
+        .promo-card[data-mes="11"] thead { background: linear-gradient(135deg, #8B4513, #a0522d); }
+        .promo-card[data-mes="11"] tfoot { background: linear-gradient(to bottom, #faf0e6, #ffe4c4); }
+
+        .promo-card[data-mes="12"] thead { background: linear-gradient(135deg, #0F7938, #1b5e20); }
+        .promo-card[data-mes="12"] tfoot { background: linear-gradient(to bottom, #e8f5e9, #c8e6c9); }
     </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- HEADER -->
     <header>
         <div class="logo-area">
             <img src="Imagenes/LOGO1.png" alt="Logo" class="logo"/>
@@ -99,25 +165,20 @@
         </nav>
     </header>
 
-    <!-- ===== MAIN ===== -->
     <main class="main">
 
-        <!-- TÍTULO -->
         <section class="Promociones_titulo">
             <h1><em>Promociones</em> del Mes</h1>
             <div class="divider-deco"><span class="divider-deco-inner"></span></div>
-            <p class="text-carta">Cada mes te sorprendemos con una bebida especial. Visítanos y prueba la del mes.</p>
+            <p class="text-carta">Cada mes te sorprendemos con una bebida especial con descuento exclusivo. Visítanos y prueba la del mes.</p>
         </section>
 
-        <!-- ===== CONTROLES JS — diseño editorial ===== -->
         <div class="controles-wrapper">
 
             <p class="controles-titulo">Explorar colección</p>
 
-            <!-- Fila de selects con onchange -->
             <div class="controles-selects">
 
-                <!-- onchange: filtra por categoría -->
                 <div class="ctrl-grupo">
                     <label for="sel-categoria">Categoría</label>
                     <select id="sel-categoria" onchange="filtrarPorCategoria(this.value)">
@@ -131,40 +192,35 @@
 
                 <div class="ctrl-sep"></div>
 
-                <!-- onchange: ordena tarjetas -->
                 <div class="ctrl-grupo">
                     <label for="sel-orden">Ordenar por</label>
                     <select id="sel-orden" onchange="ordenarTarjetas(this.value)">
                         <option value="original">Mes del año</option>
                         <option value="az">Nombre A → Z</option>
                         <option value="za">Nombre Z → A</option>
+                        <option value="precio-asc">Precio: menor a mayor</option>
+                        <option value="precio-desc">Precio: mayor a menor</option>
+                        <option value="descuento">Mayor descuento</option>
                     </select>
                 </div>
             </div>
 
             <div class="controles-linea"></div>
 
-            <!-- Botones con onclick -->
             <div class="controles-btns">
-                <!-- onclick: resalta el mes actual -->
                 <button class="btn-js" onclick="resaltarMesActual()">Ver promoción del mes</button>
-
-                <!-- onclick: restablece filtros -->
                 <button class="btn-js" onclick="restablecerFiltros()">Restablecer</button>
             </div>
         </div>
 
-        <!-- Contador dinámico de resultados -->
         <p id="contador-resultado"></p>
 
-        <!-- TOAST -->
         <div id="toast"></div>
 
-        <!-- GRID DE TARJETAS -->
         <section aria-label="Promociones mensuales">
             <div class="contenedor-tablas" id="grid-promos">
 
-                <div class="promo-card" data-mes="1" data-nombre="Energía de Año Nuevo" data-categoria="cafe">
+                <div class="promo-card" data-mes="1" data-nombre="Energía de Año Nuevo" data-categoria="cafe" data-precio="18.00" data-descuento="20">
                     <div class="promo-img-wrap">
                         <img src="Clasicos/pngtree-espresso-coffee-cutout-png-image_14908169.png"
                              alt="Espresso con canela y naranja" loading="lazy">
@@ -175,11 +231,17 @@
                             <tr><td>ENERO</td></tr>
                             <tr><td>Café con especias y cítricos</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Espresso con canela, naranja y miel</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 18.00</span>
+                                <span class="precio-descuento">S/. 14.40</span>
+                                <span class="descuento-badge">-20%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="2" data-nombre="Dulce Corazón" data-categoria="postre">
+                <div class="promo-card" data-mes="2" data-nombre="Dulce Corazón" data-categoria="postre" data-precio="16.00" data-descuento="25">
                     <div class="promo-img-wrap">
                         <img src="Postres/pngtree-slice-of-strawberry-cheesecake-topped-with-fresh-berries-png-image_18847834.png"
                              alt="Chocolate caliente rosa con frambuesa" loading="lazy">
@@ -190,11 +252,17 @@
                             <tr><td>FEBRERO</td></tr>
                             <tr><td>Chocolate caliente rosa</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Chocolate blanco con frambuesa y crema batida</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 16.00</span>
+                                <span class="precio-descuento">S/. 12.00</span>
+                                <span class="descuento-badge">-25%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="3" data-nombre="Primavera en Flor" data-categoria="te">
+                <div class="promo-card" data-mes="3" data-nombre="Primavera en Flor" data-categoria="te" data-precio="14.00" data-descuento="15">
                     <div class="promo-img-wrap">
                         <img src="Infusiones/pngtree-cup-of-green-tea-with-leaves-on-transparent-background-png-image_20059703.png"
                              alt="Té verde con flor de cerezo" loading="lazy">
@@ -205,11 +273,17 @@
                             <tr><td>MARZO</td></tr>
                             <tr><td>Té verde con flor de cerezo</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Infusión aromática con pétalos de cerezo</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 14.00</span>
+                                <span class="precio-descuento">S/. 11.90</span>
+                                <span class="descuento-badge">-15%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="4" data-nombre="Lluvia de Caramelo" data-categoria="cafe">
+                <div class="promo-card" data-mes="4" data-nombre="Lluvia de Caramelo" data-categoria="cafe" data-precio="17.00" data-descuento="30">
                     <div class="promo-img-wrap">
                         <img src="Calientes/pngtree-viennese-coffee-reminiscent-of-cafe-mocha-european-drink-that-contains-espresso-png-image_14593740.png"
                              alt="Café latte con caramelo y vainilla" loading="lazy">
@@ -220,11 +294,17 @@
                             <tr><td>ABRIL</td></tr>
                             <tr><td>Café latte con caramelo y vainilla</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Latte cremoso con caramelo y vainilla</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 17.00</span>
+                                <span class="precio-descuento">S/. 11.90</span>
+                                <span class="descuento-badge">-30%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="5" data-nombre="Jardín de Menta" data-categoria="bebida">
+                <div class="promo-card" data-mes="5" data-nombre="Jardín de Menta" data-categoria="bebida" data-precio="15.00" data-descuento="20">
                     <div class="promo-img-wrap">
                         <img src="Bebidas refrescantes/pngtree-passion-fruit-mojito-tropical-cocktail-png-image_11671596.png"
                              alt="Mojito sin alcohol de hierbabuena y lima" loading="lazy">
@@ -235,11 +315,17 @@
                             <tr><td>MAYO</td></tr>
                             <tr><td>Mojito sin alcohol</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Refrescante bebida de hierbabuena y lima</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 15.00</span>
+                                <span class="precio-descuento">S/. 12.00</span>
+                                <span class="descuento-badge">-20%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="6" data-nombre="Sol Tropical" data-categoria="bebida">
+                <div class="promo-card" data-mes="6" data-nombre="Sol Tropical" data-categoria="bebida" data-precio="16.00" data-descuento="25">
                     <div class="promo-img-wrap">
                         <img src="Bebidas refrescantes/pngtree-smoothies-ready-fruits-png-image_20328080.png"
                              alt="Smoothie de mango y piña" loading="lazy">
@@ -250,11 +336,17 @@
                             <tr><td>JUNIO</td></tr>
                             <tr><td>Smoothie de mango y piña</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Frutas tropicales con yogur y miel</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 16.00</span>
+                                <span class="precio-descuento">S/. 12.00</span>
+                                <span class="descuento-badge">-25%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="7" data-nombre="Frescura Estival" data-categoria="cafe">
+                <div class="promo-card" data-mes="7" data-nombre="Frescura Estival" data-categoria="cafe" data-precio="18.00" data-descuento="15">
                     <div class="promo-img-wrap">
                         <img src="Especiales/pngtree-iced-coffee-latte-in-a-plastic-cup-png-image_16393391.png"
                              alt="Café frío con vainilla" loading="lazy">
@@ -265,11 +357,17 @@
                             <tr><td>JULIO</td></tr>
                             <tr><td>Café frío con vainilla</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Iced coffee con crema y vainilla</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 18.00</span>
+                                <span class="precio-descuento">S/. 15.30</span>
+                                <span class="descuento-badge">-15%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="8" data-nombre="Chocolate Explosivo" data-categoria="postre">
+                <div class="promo-card" data-mes="8" data-nombre="Chocolate Explosivo" data-categoria="postre" data-precio="17.00" data-descuento="30">
                     <div class="promo-img-wrap">
                         <img src="Postres/pngtree-chocolate-brownie-with-vanilla-ice-cream-png-image_19965918.png"
                              alt="Chocolate con chile y canela" loading="lazy">
@@ -280,11 +378,17 @@
                             <tr><td>AGOSTO</td></tr>
                             <tr><td>Chocolate con chile y canela</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Chocolate intenso con especias</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 17.00</span>
+                                <span class="precio-descuento">S/. 11.90</span>
+                                <span class="descuento-badge">-30%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="9" data-nombre="Dulce Patriótico" data-categoria="cafe">
+                <div class="promo-card" data-mes="9" data-nombre="Dulce Patriótico" data-categoria="cafe" data-precio="16.00" data-descuento="20">
                     <div class="promo-img-wrap">
                         <img src="Especiales/pngtree-cold-brewed-iced-latte-coffee-png-image_15470494.png"
                              alt="Latte con caramelo y manzana" loading="lazy">
@@ -295,11 +399,17 @@
                             <tr><td>SETIEMBRE</td></tr>
                             <tr><td>Latte con caramelo y manzana</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Inspirado en sabores otoñales</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 16.00</span>
+                                <span class="precio-descuento">S/. 12.80</span>
+                                <span class="descuento-badge">-20%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="10" data-nombre="Halloween Mágico" data-categoria="cafe">
+                <div class="promo-card" data-mes="10" data-nombre="Halloween Mágico" data-categoria="cafe" data-precio="18.00" data-descuento="25">
                     <div class="promo-img-wrap">
                         <img src="Especiales/pngtree-mocha-coffee-frappe-in-glass-png-image_13321780.png"
                              alt="Latte de calabaza especiado" loading="lazy">
@@ -310,11 +420,17 @@
                             <tr><td>OCTUBRE</td></tr>
                             <tr><td>Latte de calabaza</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Espresso con especias de calabaza</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 18.00</span>
+                                <span class="precio-descuento">S/. 13.50</span>
+                                <span class="descuento-badge">-25%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="11" data-nombre="Dulce Otoñal" data-categoria="te">
+                <div class="promo-card" data-mes="11" data-nombre="Dulce Otoñal" data-categoria="te" data-precio="15.00" data-descuento="30">
                     <div class="promo-img-wrap">
                         <img src="Calientes/promlatte.png"
                              alt="Té chai con miel y especias" loading="lazy">
@@ -325,11 +441,17 @@
                             <tr><td>NOVIEMBRE</td></tr>
                             <tr><td>Té chai con miel</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Té negro con especias y miel</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 15.00</span>
+                                <span class="precio-descuento">S/. 10.50</span>
+                                <span class="descuento-badge">-30%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
-                <div class="promo-card" data-mes="12" data-nombre="Navidad Especiada" data-categoria="cafe">
+                <div class="promo-card" data-mes="12" data-nombre="Navidad Especiada" data-categoria="cafe" data-precio="19.00" data-descuento="20">
                     <div class="promo-img-wrap">
                         <img src="Clasicos/pngtree-double-delight-cup-of-coffee-and-png-image_15316693.png"
                              alt="Chocolate caliente especiado de navidad" loading="lazy">
@@ -340,7 +462,13 @@
                             <tr><td>DICIEMBRE</td></tr>
                             <tr><td>Chocolate caliente especiado</td></tr>
                         </tbody>
-                        <tfoot><tr><td>Canela, clavo y crema batida</td></tr></tfoot>
+                        <tfoot><tr><td>
+                            <div class="precio-container">
+                                <span class="precio-original">S/. 19.00</span>
+                                <span class="precio-descuento">S/. 15.20</span>
+                                <span class="descuento-badge">-20%</span>
+                            </div>
+                        </td></tr></tfoot>
                     </table>
                 </div>
 
@@ -349,7 +477,6 @@
 
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer class="f-pie">
         <div class="f-fila">
             <div class="f-columna">
@@ -375,211 +502,8 @@
 
 </div><!-- /container -->
 
-<script>
-
-    /* ── CONSTANTES (valor fijo, no cambia) ── */
-    const NOMBRE_CAFETERIA  = "Bruma Café";          // Nombre del negocio
-    const TOTAL_MESES       = 12;                    // Siempre hay 12 meses
-    const MESES_NOMBRES = [                          // Array constante de nombres
-        "", "Enero","Febrero","Marzo","Abril",
-        "Mayo","Junio","Julio","Agosto",
-        "Setiembre","Octubre","Noviembre","Diciembre"
-    ];
-
-    /* ── VARIABLES (pueden cambiar durante la ejecución) ── */
-    let categoriaActual = "todas";   // Categoría seleccionada en el filtro
-    let ordenActual     = "original"; // Orden actual de las tarjetas
-    /* ── Diagnóstico inicial en consola ── */
-    console.log("=== " + NOMBRE_CAFETERIA + " — Página de Promociones cargada ===");
-    console.log("Total de promociones disponibles: " + TOTAL_MESES);
-
-    /* ── Al cargar la página: resalta el mes actual automáticamente ── */
-    window.onload = function() {
-        actualizarContador();       // Muestra el contador inicial
-    };
-
-    /*
-       FUNCIÓN: resaltarMesActual()
-       Evento disparado por: onclick del botón "Ver mes actual"
-       También se llama automáticamente al cargar (window.onload)
-    */
-    function resaltarMesActual() {
-        // Variable: obtiene el mes actual del navegador (1–12)
-        let mesActual = new Date().getMonth() + 1;
-
-        // Constante local: nombre del mes para mostrar en consola
-        const nombreMes = MESES_NOMBRES[mesActual];
-
-        // Diagnóstico en consola (console.log)
-        console.log("Mes actual detectado: " + mesActual + " (" + nombreMes + ")");
-
-        // Selecciona todas las tarjetas del DOM
-        let tarjetas = document.querySelectorAll(".promo-card");
-
-        // Recorre cada tarjeta con forEach
-        tarjetas.forEach(function(tarjeta) {
-            // Lee el atributo data-mes de cada tarjeta
-            let mesTarjeta = parseInt(tarjeta.getAttribute("data-mes"));
-
-            // Quita badges anteriores para no duplicar
-            let badgeAnterior = tarjeta.querySelector(".badge-mes");
-            if (badgeAnterior) badgeAnterior.remove();
-            tarjeta.classList.remove("destacada");
-
-            // Si el mes coincide → añade clase y badge visual
-            if (mesTarjeta === mesActual) {
-                tarjeta.classList.add("destacada");
-
-                let badge = document.createElement("span");
-                badge.className = "badge-mes";
-                badge.textContent = "Promo de " + nombreMes;
-                tarjeta.appendChild(badge);
-
-                // Hace scroll suave hacia la tarjeta destacada
-                setTimeout(function() {
-                    tarjeta.scrollIntoView({ behavior: "smooth", block: "center" });
-                }, 300);
-            }
-        });
-
-        mostrarToast("Mostrando la promo de " + nombreMes);
-        console.log("Tarjeta del mes " + nombreMes + " destacada correctamente.");
-    }
-
-    /*
-       FUNCIÓN: filtrarPorCategoria(valor)
-       Evento disparado por: onchange del <select id="sel-categoria">
-    */
-    function filtrarPorCategoria(valor) {
-        // Variable: guarda la categoría elegida
-        categoriaActual = valor;
-
-        console.log("Filtro aplicado — categoría: " + categoriaActual);
-
-        let tarjetas = document.querySelectorAll(".promo-card");
-        let visibles  = 0;   // Variable: contador de tarjetas visibles
-
-        tarjetas.forEach(function(tarjeta) {
-            // Lee el atributo data-categoria de cada tarjeta
-            let catTarjeta = tarjeta.getAttribute("data-categoria");
-
-            if (categoriaActual === "todas" || catTarjeta === categoriaActual) {
-                tarjeta.classList.remove("oculta");
-                visibles++;
-            } else {
-                tarjeta.classList.add("oculta");
-            }
-        });
-
-        actualizarContador();
-        mostrarToast("Mostrando " + visibles + " promoción(es) de «" + etiquetaCategoria(categoriaActual) + "»");
-        console.log("Tarjetas visibles tras filtro: " + visibles + " de " + TOTAL_MESES);
-    }
-
-    /*
-       FUNCIÓN: ordenarTarjetas(criterio)
-       Evento disparado por: onchange del <select id="sel-orden">
-    */
-    function ordenarTarjetas(criterio) {
-        // Variable: guarda el criterio de orden
-        ordenActual = criterio;
-
-        console.log("Ordenando tarjetas por: " + ordenActual);
-
-        let grid     = document.getElementById("grid-promos");
-        let tarjetas = Array.from(grid.querySelectorAll(".promo-card"));
-
-        // Ordena el array según el criterio elegido
-        tarjetas.sort(function(a, b) {
-            if (ordenActual === "original") {
-                return parseInt(a.getAttribute("data-mes")) - parseInt(b.getAttribute("data-mes"));
-            }
-            // Variable: nombre de cada tarjeta para comparar alfabéticamente
-            let nombreA = a.getAttribute("data-nombre");
-            let nombreB = b.getAttribute("data-nombre");
-            if (ordenActual === "az") return nombreA.localeCompare(nombreB);
-            if (ordenActual === "za") return nombreB.localeCompare(nombreA);
-        });
-
-        // Reinserta las tarjetas en el nuevo orden
-        tarjetas.forEach(function(tarjeta) {
-            grid.appendChild(tarjeta);
-        });
-
-        mostrarToast("Orden actualizado ✓");
-        console.log("Reordenamiento completado — criterio: " + ordenActual);
-    }
-
-    /*
-       FUNCIÓN: restablecerFiltros()
-       Evento disparado por: onclick del botón "Restablecer"
-    */
-    function restablecerFiltros() {
-        // Restablece variables a valores iniciales
-        categoriaActual  = "todas";
-        ordenActual      = "original";
-
-        // Restablece los selectores visualmente
-        document.getElementById("sel-categoria").value = "todas";
-        document.getElementById("sel-orden").value     = "original";
-
-        // Aplica filtro y orden por defecto
-        filtrarPorCategoria("todas");
-        ordenarTarjetas("original");
-
-        mostrarToast("Filtros restablecidos");
-        console.log("Filtros restablecidos a valores por defecto.");
-    }
-
-    /*
-       FUNCIÓN AUXILIAR: actualizarContador()
-       Actualiza el párrafo que muestra cuántas tarjetas se ven
-    */
-    function actualizarContador() {
-        let visibles = document.querySelectorAll(".promo-card:not(.oculta)").length;
-        let etiqueta  = etiquetaCategoria(categoriaActual);
-
-        // Variable: texto del contador
-        let textoContador = "Mostrando " + visibles + " de " + TOTAL_MESES + " promociones";
-        if (categoriaActual !== "todas") textoContador += " · Categoría: " + etiqueta;
-
-        document.getElementById("contador-resultado").textContent = textoContador;
-    }
-
-    /*
-       FUNCIÓN AUXILIAR: etiquetaCategoria(valor)
-       Devuelve el nombre legible de una categoría
-    */
-    function etiquetaCategoria(valor) {
-        // Constante local: mapa de valores a etiquetas
-        const etiquetas = {
-            todas: "Todas",
-            cafe:  "Café",
-            bebida:"Bebidas",
-            postre:"Postres",
-            te:    "Tés"
-        };
-        return etiquetas[valor] || valor;
-    }
-
-    /*
-       FUNCIÓN AUXILIAR: mostrarToast(mensaje)
-       Muestra una notificación temporal en pantalla
-    */
-    function mostrarToast(mensaje) {
-        let toast = document.getElementById("toast");
-        toast.textContent = mensaje;
-        toast.classList.add("visible");
-
-        // Variable: temporizador para ocultar el toast
-        let timerToast = setTimeout(function() {
-            toast.classList.remove("visible");
-        }, 2500);
-
-        console.log("Toast mostrado: \"" + mensaje + "\"");
-    }
-
-</script>
+<!-- SCRIPT EXTERNO -->
+<script src="Scrip_3.js"></script>
 
 </body>
 </html>
