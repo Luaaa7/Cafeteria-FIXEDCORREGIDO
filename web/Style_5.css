@@ -1,7 +1,7 @@
 /* RESET */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #F5F1E9;
 }
 
@@ -221,9 +221,10 @@ body {
 
 /* TEXOS */
 .banner-titulo {
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.8rem;
 
-    font-weight: bold;
+    font-weight: 700;
 
     margin: 0 0 15px 0;
 
@@ -252,6 +253,8 @@ body {
 }
 
 .seccion-encabezado h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
     font-size: 2.2rem;
 
     color: #26382E;
@@ -310,11 +313,13 @@ body {
 /* TÍTULOS */
 .titulo-seccion {
 
+    font-family: 'Playfair Display', Georgia, serif;
+
     font-size: 1.4rem;
 
     color: #26382E;
 
-    font-weight: bold;
+    font-weight: 600;
 
     margin-bottom: 15px;
 

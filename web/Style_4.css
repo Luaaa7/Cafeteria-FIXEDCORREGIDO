@@ -14,7 +14,7 @@
 body {
     margin: 0;
     /* Elimina márgenes automáticos */
-    font-family: Arial;
+    font-family: 'Poppins', sans-serif;
     /* Fuente principal */
     background-color: #F5F1E9;
     /* Color de fondo */
@@ -126,6 +126,8 @@ body {
 
 /* TITULO */
 .titulo-registro {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
     overflow: hidden;    /* Oculta letras sobrantes */
     border-right: 3px solid #26382E;
     /* Cursor */

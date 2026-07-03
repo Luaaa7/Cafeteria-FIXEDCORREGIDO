@@ -8,7 +8,7 @@
 
 /* Estilos globales */
 body{
-    font-family:'Arial'; 
+    font-family: 'Poppins', sans-serif; 
     margin:0;                       
     padding:0;   /* Le quita el espacio o aumenta al texto */                   
     color:#26382E;                   
@@ -48,8 +48,9 @@ body{
 }
 
 .banner-text h1 {
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 7rem;      
-    font-weight: bold;    /* negrita */
+    font-weight: 700;    /* negrita */
     margin: 0;
 }
 
@@ -69,6 +70,7 @@ body{
 }
 /* Estilo para el título en Laptop */
 .content1 h1 {
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 3rem; /* Tamaño grande para PC */
     margin-bottom: 10px;
     color: #2c1b0e; 
@@ -113,6 +115,7 @@ body{
 }
 
 .content2 h2 {
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.5rem;
     margin-bottom: 40px; /*Espacio debajo del elemento*/
 }
@@ -149,7 +152,7 @@ body{
   display: flex; /* Divide en dos columnas */
   gap: 150px;
   align-items: center;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   max-width: 1000px;
   margin: 40px auto;
   padding: 60px 8%;
@@ -157,13 +160,13 @@ body{
 
 /* Contenido de texto */
 .content3 h1 { 
-    font-family: arial;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 3rem;
     margin: 10px 0; 
 }
 
 .content3 p { 
-    font-family: arial;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     margin: 10px 0; 
 }
