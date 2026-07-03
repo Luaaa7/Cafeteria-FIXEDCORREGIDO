@@ -2,7 +2,7 @@
 
 /* Estilos generales de toda la página */
 body {
-    font-family: 'Jost', 'Segoe UI', sans-serif; /* Fuente principal */
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
     margin: 0; /* Elimina márgenes externos */
     padding: 0; /* Elimina espacios internos */
     color: #26382E; /* Color principal del texto */
@@ -47,7 +47,7 @@ body {
 
 /* Título principal del banner */
 .banner-text h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif; /* Fuente elegante */
+    font-family: 'Playfair Display', Georgia, serif; /* Fuente elegante */
     font-size: 5rem; /* Tamaño grande */
     font-weight: 300; /* Grosor fino */
     letter-spacing: 0.06em; /* Espaciado entre letras */
@@ -91,7 +91,7 @@ body {
 
 /* Título principal */
 .Promociones_titulo h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     
     /* Tamaño adaptable según pantalla */
     font-size: clamp(2rem, 5vw, 3.6rem);
@@ -231,7 +231,7 @@ thead {
 thead th {
     padding: 22px 18px 18px;
 
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
 
     font-size: 1.08rem;
     font-weight: 400;
@@ -405,7 +405,7 @@ tfoot td {
 
 /* Título de la sección */
 .controles-titulo {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 0.78rem;
     font-weight: 400;
     letter-spacing: 0.35em;
@@ -441,7 +441,7 @@ tfoot td {
 }
 
 .ctrl-grupo select {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.88rem;
     font-weight: 300;
     padding: 9px 36px 9px 14px;
@@ -489,7 +489,7 @@ tfoot td {
 
 /* Botón estilo texto elegante */
 .btn-js {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 0.95rem;
     font-weight: 400;
     font-style: italic;
@@ -588,7 +588,7 @@ body.tema-diciembre {
 }
 
 .festividad-selector h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.2rem;
     color: var(--loyalty-primary);
     margin-bottom: 15px;
@@ -612,7 +612,7 @@ body.tema-diciembre {
 }
 
 .form-group select {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 10px 14px;
     border: 2px solid var(--loyalty-border);
     border-radius: 6px;
