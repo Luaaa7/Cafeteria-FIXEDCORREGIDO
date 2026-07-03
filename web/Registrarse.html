@@ -10,6 +10,9 @@
     <link href="Style_header.css" rel="stylesheet" type="text/css" />
     <link href="Style_4.css" rel="stylesheet" type="text/css" />
     <link href="Style_Footer.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="css/modal.css" rel="stylesheet" type="text/css"/>
+    <link href="css/formulario-validacion.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -19,13 +22,19 @@
         <div class="logo-area">
             <img src="Imagenes/LOGO1.png" alt="Logo" class="logo"/>
         </div>
-        <nav class="menu">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="menu-principal">
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+        </button>
+        <nav class="menu" id="menu-principal">
             <a href="index.html">Inicio</a>
             <a href="CATALOGO.html">Carta</a>
             <a href="Promociones.html">Promociones</a>
             <a href="Direccion.html">Ubicación</a>
             <a href="Registrarse.html">Registrarse</a>
         </nav>
+        <div id="nav-overlay" class="nav-overlay"></div>
     </header>
 
     <!-- FORMULARIO -->
@@ -45,36 +54,41 @@
 
                 <h2 class="titulo-registro">REGISTRATE</h2>
 
-                <form class="formulario-cafe">
+                <form class="formulario-cafe" novalidate>
 
                     <div class="campo">
-                        <label class="etiqueta">Nombre:</label>
-                        <input type="text" required class="input-form" placeholder="Ingresa tu nombre">
+                        <label class="etiqueta" for="campo-nombre">Nombre:</label>
+                        <input type="text" id="campo-nombre" data-campo="nombre" class="input-form" placeholder="Ingresa tu nombre" aria-describedby="error-nombre">
+                        <span id="error-nombre" class="mensaje-error" role="alert"></span>
                     </div>
 
                     <div class="campo">
-                        <label class="etiqueta">Apellido:</label>
-                        <input type="text" required class="input-form" placeholder="Ingresa tu apellido">
+                        <label class="etiqueta" for="campo-apellido">Apellido:</label>
+                        <input type="text" id="campo-apellido" data-campo="apellido" class="input-form" placeholder="Ingresa tu apellido" aria-describedby="error-apellido">
+                        <span id="error-apellido" class="mensaje-error" role="alert"></span>
                     </div>
 
                     <div class="campo">
-                        <label class="etiqueta">Correo:</label>
-                        <input type="email" required class="input-form" placeholder="Ingresa tu correo electrónico">
+                        <label class="etiqueta" for="campo-correo">Correo:</label>
+                        <input type="email" id="campo-correo" data-campo="correo" class="input-form" placeholder="Ingresa tu correo electrónico" aria-describedby="error-correo">
+                        <span id="error-correo" class="mensaje-error" role="alert"></span>
                     </div>
 
                     <div class="campo">
-                        <label class="etiqueta">Teléfono:</label>
-                        <input type="tel" required class="input-form" placeholder="Ingresa tu número de teléfono">
+                        <label class="etiqueta" for="campo-telefono">Teléfono:</label>
+                        <input type="tel" id="campo-telefono" data-campo="telefono" class="input-form" placeholder="Ingresa tu número de teléfono" aria-describedby="error-telefono">
+                        <span id="error-telefono" class="mensaje-error" role="alert"></span>
                     </div>
 
                     <div class="campo">
-                        <label class="etiqueta">Fecha de Nacimiento:</label>
-                        <input type="date" required class="input-form">
+                        <label class="etiqueta" for="campo-fecha">Fecha de Nacimiento:</label>
+                        <input type="date" id="campo-fecha" data-campo="fecha" class="input-form" aria-describedby="error-fecha">
+                        <span id="error-fecha" class="mensaje-error" role="alert"></span>
                     </div>
                     
                     <div class="campo">
-                        <label class="etiqueta">Comentario:</label>
-                        <textarea rows="4" class="input-form" placeholder="Déjanos un comentario"></textarea>
+                        <label class="etiqueta" for="campo-comentario">Comentario:</label>
+                        <textarea rows="4" id="campo-comentario" class="input-form" placeholder="Déjanos un comentario"></textarea>
                     </div>
 
                     <button type="submit" class="boton-enviar">Enviar</button>
@@ -115,6 +129,20 @@
         </div>
     </footer>
 
+    <!-- MODAL GENÉRICO (éxito / error del formulario) -->
+    <div id="modal-generico" class="modal-overlay">
+        <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo-texto">
+            <button type="button" class="modal-cerrar-x" aria-label="Cerrar">&times;</button>
+            <div class="modal-icono"></div>
+            <h3 id="modal-titulo-texto" class="modal-titulo"></h3>
+            <p class="modal-texto"></p>
+            <button type="button" class="modal-cerrar">Entendido</button>
+        </div>
+    </div>
+
+    <script src="js/HamburgerMenu.js"></script>
+    <script src="js/Modal.js"></script>
+    <script src="js/FormValidator.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,8 @@
         <link href="Style_1.css" rel="stylesheet" type="text/css"/>
         <link href="Style_header.css" rel="stylesheet" type="text/css"/>
         <link href="Style_Footer.css" rel="stylesheet" type="text/css"/>
-    </head>
+        <link href="css/menu-responsive.css" rel="stylesheet" type="text/css"/>
+</head>
 
     <body>
         <div class="container">
@@ -19,13 +20,19 @@
         <div class="logo-area">
             <img src="Imagenes/LOGO1.png" alt="Logo" class="logo"/>
         </div>
-        <nav class="menu">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="menu-principal">
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+        </button>
+        <nav class="menu" id="menu-principal">
             <a href="index.html">Inicio</a>
             <a href="CATALOGO.html">Carta</a>
             <a href="Promociones.html">Promociones</a>
             <a href="Direccion.html">Ubicación</a>
             <a href="Registrarse.html">Registrarse</a>
         </nav>
+        <div id="nav-overlay" class="nav-overlay"></div>
     </header>
             <div class="banner-img">
                 <div class="banner-text">
@@ -153,5 +160,6 @@
         <p>© 2026 Bruma Café. Todos los derechos reservados.</p>
     </div>
     </footer>
-    </body>
+        <script src="js/HamburgerMenu.js"></script>
+</body>
 </html> 

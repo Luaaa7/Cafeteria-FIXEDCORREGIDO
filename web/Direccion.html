@@ -23,6 +23,7 @@
     <link href="Style_Footer.css"
           rel="stylesheet"
           type="text/css"/>
+    <link href="css/menu-responsive.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -33,14 +34,19 @@
              alt="Logo"
              class="logo"/>
     </div>
-
-    <nav class="menu">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="menu-principal">
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+        </button>
+        <nav class="menu" id="menu-principal">
         <a href="index.html">Inicio</a>
         <a href="CATALOGO.html">Carta</a>
         <a href="Promociones.html">Promociones</a>
         <a href="Direccion.html">Ubicación</a>
         <a href="Registrarse.html">Registrarse</a>
     </nav>
+        <div id="nav-overlay" class="nav-overlay"></div>
 </header>
 
 <div class="banner-seccion">
@@ -283,5 +289,6 @@
 
 </footer>
 
+    <script src="js/HamburgerMenu.js"></script>
 </body>
 </html>
