@@ -5,8 +5,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #26382E;
-    color: #F5F1E9;
+    background-color:var(--bg-header);
+    color: var(--text-on-dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,8 +41,8 @@ header {
 
 /* Enlaces */
 .menu a {
-    color: #F5F1E9;
-    font-family: Arial, sans-serif;
+    color: var(--text-on-dark);
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 1.05rem;
     text-decoration: none;
@@ -54,8 +54,8 @@ header {
 }
 
 .menu a:hover {
-    color: #26382E;
-    background: #BFD9C3;
+    color: var(--text-primary);
+    background: var(--tan);
 }
 
 /* TABLETS */

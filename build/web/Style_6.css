@@ -1,7 +1,6 @@
 /* =========================================================
    RESET GENERAL
 ========================================================= */
-
 /* 
    Elimina márgenes y padding por defecto del navegador.
    box-sizing:border-box hace que el padding y border
@@ -18,28 +17,19 @@
 */
 body {
     font-family: 'Poppins', sans-serif; /* Fuente principal */
-    background: #f5ede3; /* Color de fondo */
-    color: #3d2b1f; /* Color principal del texto */
+    background: var(--bg-page); /* Color de fondo */
+    color:  var(--text-primary); /* Color principal del texto */
     height: 100%; /* Altura completa */
     width: 100%; /* Anchura completa */
 }
 
-/* =========================================================
-   MAIN
-========================================================= */
-
-/* 
-   Contenedor principal de toda la página.
-*/
+/* MAIN.-Contenedor principal de toda la página.*/
 .main {
     max-width: 1200px; /* Máximo ancho */
     margin: auto; /* Centrado horizontal */
     padding: 0 24px 60px; /* Espaciado interno */
 }
-
-/* =========================================================
-   TÍTULO PRINCIPAL
-========================================================= */
+/* TÍTULO PRINCIPAL */
 
 /* 
    Encabezado de la carta.
@@ -55,7 +45,7 @@ body {
 .carta-header h1 {
     font-family: 'Playfair Display', serif; /* Fuente elegante */
     font-size: 2.8rem; /* Tamaño del texto */
-    color: #6b1e1e; /* Color vino */
+       color: var(--burnt-orange); /* Color vino */
     letter-spacing: 0.04em; /* Separación entre letras */
     margin-bottom: 6px; /* Espacio inferior */
 }
@@ -72,7 +62,7 @@ body {
     height: 2px; /* Grosor */
     
     /* Degradado decorativo */
-    background: linear-gradient(to right, transparent, #c0845a, transparent);
+   background: linear-gradient(to right, transparent, var(--tan), transparent);
 
     margin: 0.5rem auto 0.9rem;
 
@@ -97,7 +87,7 @@ body {
 */
 .text-carta {
     font-size: 0.93rem;
-    color: #9a7a6a;
+ color: var(--text-secondary);
     font-weight: 300;
     letter-spacing: 0.02em;
 }
@@ -105,7 +95,6 @@ body {
 /* =========================================================
    BUSCADOR
 ========================================================= */
-
 /* 
    Contenedor del buscador.
 */
@@ -113,19 +102,19 @@ body {
     display: flex; /* Flexbox */
     align-items: center; /* Centrado vertical */
 
-    background: #fdf8f3;
+      background: var(--bg-page);
 
     border-radius: 50px; /* Bordes redondos */
 
-    padding: 10px 20px;
+    padding: 10px 20px;/* Espaciado interno */
 
     max-width: 540px;
 
     margin: 1.4rem auto;
 
-    border: 1.5px solid #ddd0c5;
+    border: 1.5px solid var(--border-color);
 
-    transition:
+    transition:/* Transiciones suaves para interacciones */
         border-color 0.2s,
         box-shadow 0.2s;
 }
@@ -134,10 +123,11 @@ body {
    Estilo cuando el input recibe focus.
 */
 .buscador-box:focus-within {
-    border-color: #c0845a;
+ border-color: var(--tan);/* Cambia el color del borde al enfocar */
+
 
     box-shadow:
-        0 0 0 3px rgba(192, 132, 90, 0.15);
+        0 0 0 3px rgba(192, 132, 90, 0.15);/* Sombra suave alrededor del buscador */
 }
 
 /* 
@@ -164,33 +154,32 @@ body {
 
     font-family: 'Poppins', sans-serif;
 
-    color: #5a3d2b;
+     color: var(--text-primary);
 }
 
 /* 
    Placeholder del input.
 */
-.buscador-box input::placeholder {
-    color: #b09080;
+.buscador-box input::placeholder {/* Color del texto de placeholder */
+    color: var(--burnt-orange);
 }
 
 /* =========================================================
    FILTROS
 ========================================================= */
-
 /* 
    Contenedor de filtros superiores.
 */
 .filtros-top {
-    display: flex;
+    display: flex;/* Flexbox para organizar los filtros */
 
     justify-content: center;
 
-    gap: 24px;
+    gap: 24px;/* Espacio entre grupos de filtros */
 
     margin: 0 0 1.4rem;
 
-    flex-wrap: wrap;
+    flex-wrap: wrap;/* Permite que los filtros se ajusten en pantallas pequeñas */
 
     align-items: center;
 }
@@ -198,7 +187,7 @@ body {
 /* 
    Grupo de filtros.
 */
-.grupo {
+.grupo {/* Flexbox para organizar etiqueta y select */
     display: flex;
     align-items: center;
     gap: 8px;
@@ -207,19 +196,15 @@ body {
 /* 
    Texto de etiquetas.
 */
-.grupo label {
+.grupo label {/* Estilo de las etiquetas de los filtros */
     font-size: 0.88rem;
     font-weight: 600;
-    color: #5a3d2b;
+    color: var(--text-primary);
 }
 
-/* =========================================================
-   SELECT
-========================================================= */
+/* SELECT */
 
-/* 
-   Estilos del select.
-*/
+/*  Estilos del select.*/
 select {
     padding: 7px 2rem 7px 12px;
 
@@ -229,7 +214,7 @@ select {
 
     /* Flecha personalizada */
     background:
-        #fdf8f3
+        var(--bg-page)
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23b09080'/%3E%3C/svg%3E")
         no-repeat right 10px center;
 
@@ -239,13 +224,13 @@ select {
 
     font-size: 0.86rem;
 
-    color: #5a3d2b;
+    color: var(--text-primary);
 
-    appearance: none;
+    appearance: none;/* Elimina estilos por defecto del select */
 
-    cursor: pointer;
+    cursor: pointer;/* Cambia el cursor al pasar sobre el select */
 
-    outline: none;
+    outline: none;/* Elimina el contorno por defecto al enfocar */
 
     transition: border-color 0.2s;
 }
@@ -253,32 +238,31 @@ select {
 /* 
    Focus del select.
 */
-select:focus {
-    border-color: #c0845a;
+select:focus {/* Cambia el color del borde al enfocar el select */
+    border-color: var(--tan);
 }
 
 /* =========================================================
    BOTÓN ORDEN
 ========================================================= */
-
 /* 
    Botón para cambiar el orden.
 */
-#toggleOrden {
+#toggleOrden {/* Botón circular para cambiar el orden de los productos */
     width: 34px;
     height: 34px;
 
     border-radius: 50%;
 
-    border: 1.5px solid #d4bfb0;
+    border: 1.5px solid var(--border-color);
 
-    background: #fdf8f3;
+    background: var(--bg-page);
 
-    color: #8a6a55;
+    color: var(--text-primary);
 
     font-size: 1rem;
 
-    cursor: pointer;
+    cursor: pointer;/* Cambia el cursor al pasar sobre el botón */
 
     display: flex;
 
@@ -295,19 +279,18 @@ select:focus {
 /* 
    Hover del botón.
 */
-#toggleOrden:hover {
-    background: #e8d5c4;
-    border-color: #c0845a;
+#toggleOrden:hover {/* Efecto hover para el botón de orden */
+     background: var(--bg-surface);
+    border-color: var(--tan);
 }
 
 /* =========================================================
    CATEGORÍAS
 ========================================================= */
-
 /* 
    Contenedor de categorías.
 */
-.categorias {
+.categorias {/* Flexbox para organizar los botones de categorías */
     display: flex;
 
     justify-content: center;
@@ -322,10 +305,10 @@ select:focus {
 /* 
    Botones de categorías.
 */
-.chip {
-    background: #faeee0;
+.chip {/* Estilo de los botones de categorías tipo "chip" */
+    background: var(--bg-page);
 
-    border: 1.5px solid #d4bfb0;
+    border: 1.5px solid var(--border-color);
 
     padding: 8px 18px;
 
@@ -341,7 +324,7 @@ select:focus {
 
     font-family: 'Poppins', sans-serif;
 
-    color: #7a5c48;
+    color: var(--text-secondary);
 
     white-space: nowrap;
 }
@@ -349,12 +332,12 @@ select:focus {
 /* 
    Hover de categorías.
 */
-.chip:hover {
-    background: #efd9c5;
+.chip:hover {/* Efecto hover para los botones de categorías */
+    background: var(--bg-surface);
 
-    border-color: #c0845a;
+    border-color: var(--tan);
 
-    color: #5a3d2b;
+    color: var(--text-primary);
 
     transform: scale(1.04);
 }
@@ -362,12 +345,12 @@ select:focus {
 /* 
    Categoría activa.
 */
-.chip.activo {
-    background: #7a3c1e;
+.chip.activo {/* Estilo para la categoría activa */
+    background: var(--burnt-orange);
 
-    border-color: #7a3c1e;
+    border-color: var(--burnt-orange);
 
-    color: #fdf0e6;
+    color: var(--text-on-dark);
 
     font-weight: 600;
 
@@ -383,7 +366,7 @@ select:focus {
    Grid responsive de productos.
 */
 .contenedor-productos {
-    display: grid;
+    display: grid;/* Grid para organizar los productos */
 
     grid-template-columns:
         repeat(auto-fill, minmax(230px, 1fr));
@@ -400,20 +383,16 @@ select:focus {
 /* 
    Tarjeta individual.
 */
-.card {
-    background: #fff8f2;
-
+.card {/* Estilo de las tarjetas de productos */
+     background: var(--bg-page);
     border-radius: 16px;
-
     padding: 16px;
-
-    border: 1.5px solid #ead8cc;
-
+    border: 1.5px solid var(--border-color);
     position: relative;
-
     transition:
-        transform 0.2s,
-        box-shadow 0.2s;
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 
     display: flex;
 
@@ -422,20 +401,32 @@ select:focus {
     align-items: center;
 }
 
+.card::before{
+    z-index:0;
+    pointer-events:none;
+}
+
+
 /* 
    Hover de tarjeta.
 */
 .card:hover {
     transform: translateY(-5px);
-
+ border-color:#C9A86A;
     box-shadow:
-        0 12px 28px rgba(100, 50, 20, 0.12);
+        0 18px 40px rgba(0,0,0,.22),
+        0 0 0 1px rgba(201,168,106,.25);
 }
+
+.card:hover::before{
+    opacity:1;
+}
+
 
 /* 
    Imagen del producto.
 */
-.card img {
+.card img {/* Estilo de la imagen dentro de la tarjeta */
     width: 100%;
 
     height: 170px;
@@ -445,6 +436,13 @@ select:focus {
     border-radius: 10px;
 
     margin-bottom: 10px;
+     transition:transform .35s ease;
+     position:relative;
+    z-index:10;
+}
+
+.card:hover img{
+    transform:scale(1.06);
 }
 
 /* 
@@ -457,18 +455,20 @@ select:focus {
 
     font-weight: 600;
 
-    color: #4a2c1a;
+    color: var(--text-primary);
 
     text-align: center;
 
     line-height: 1.3;
+    position:relative;
+    z-index:10;
 }
 
 /* 
    Descripción.
 */
 .card .text-card {
-    color: #9a7a6a;
+    color: var(--text-secondary);
 
     font-size: 0.80rem;
 
@@ -487,31 +487,35 @@ select:focus {
    Precio.
 */
 .card p:not(.text-card) {
-    color: #7a3c1e;
+    color: var(--burnt-orange);
 
     font-weight: 700;
 
     font-size: 1rem;
 
     margin-top: auto;
+     transition:.3s;
+     position:relative;
+    z-index:10;
 }
 
-/* =========================================================
-   FAVORITOS
-========================================================= */
+.card:hover p:not(.text-card){
+    color:#C9A86A;
+    transform:scale(1.08);
+}
 
-/* 
-   Botón favorito.
-*/
-.fav-btn {
+/* FAVORITOS*/
+
+/* Botón favorito.*/
+.fav-btn {/* Estilo del botón de favorito (corazón) */
     position: absolute;
 
     top: 12px;
     right: 12px;
+  z-index:20;
+    background: var(--bg-page);
 
-    background: #fff8f2;
-
-    border: 1.5px solid #e0c8b8;
+    border: 1.5px solid var(--border-color);
 
     font-size: 16px;
 
@@ -536,7 +540,7 @@ select:focus {
    Hover favorito.
 */
 .fav-btn:hover {
-    background: #fdd5c8;
+     background: var(--bg-surface);
 
     border-color: #e87050;
 
@@ -554,9 +558,7 @@ select:focus {
     border-color: #e84040;
 }
 
-/* =========================================================
-   ANIMACIÓN CORAZÓN
-========================================================= */
+/* ANIMACIÓN CORAZÓN*/
 
 @keyframes heart-pop {
 
@@ -577,18 +579,14 @@ select:focus {
     }
 }
 
-/* 
-   Clase para animar el corazón.
-*/
-.fav-btn.pop {
+/* Clase para animar el corazón.*/
+.fav-btn.pop {/* Clase que se agrega al botón de favorito para activar la animación de "pop" */
     animation:
         heart-pop 0.35s
         cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
 
-/* =========================================================
-   RESPONSIVE - LAPTOPS
-========================================================= */
+/*RESPONSIVE - LAPTOPS */
 
 @media (max-width:1024px){
 
@@ -691,4 +689,137 @@ select:focus {
         width:30px;
         height:30px;
     }
+}
+/* =========================================================
+   OCULTAR CON CLASE (evita usar style.display inline en JS)
+========================================================= */
+.oculto {
+    display: none;
+}
+
+/* =========================================================
+   MODAL DE PRODUCTO
+========================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(61, 43, 31, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* CRÍTICO: el atributo hidden no gana por sí solo frente a .modal-overlay
+   con display:flex, hay que forzarlo explícitamente */
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal-box {
+    background: #fff8f2;
+    border-radius: 16px;
+    padding: 28px;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    animation: modal-in 0.25s ease;
+    text-align: center;
+}
+
+.modal-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.modal-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: #6b1e1e;
+    margin-bottom: 8px;
+}
+
+.modal-box .precio {
+    color: #7a3c1e;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid #d4bfb0;
+    background: #fdf8f3;
+    cursor: pointer;
+    font-size: 14px;
+    color: #6b1e1e;
+    transition: background 0.18s, border-color 0.18s;
+}
+
+.modal-cerrar:hover {
+    background: #e8d5c4;
+    border-color: #c0845a;
+}
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================================================
+   FORMULARIOS: VALIDACIÓN EN TIEMPO REAL
+========================================================= */
+.input-invalido {
+    border-color: #e84040 !important;
+}
+
+.input-valido {
+    border-color: #4caf50 !important;
+}
+
+.error-msg {
+    color: #e84040;
+    font-size: 0.75rem;
+    min-height: 1em;
+    display: block;
+    margin-top: 4px;
+}
+
+/* =========================================================
+   FEEDBACK DE BOTONES (carga / éxito / error)
+========================================================= */
+.btn-cargando {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.btn-exito {
+    background: #4caf50 !important;
+    border-color: #4caf50 !important;
+    color: #fff !important;
+}
+
+.btn-error {
+    background: #e84040 !important;
+    border-color: #e84040 !important;
+    color: #fff !important;
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
 }

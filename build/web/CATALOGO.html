@@ -9,23 +9,34 @@
     <link href="Style_header.css" rel="stylesheet" type="text/css"/>
     <link href="Style_6.css" rel="stylesheet" type="text/css"/>
     <link href="Style_Footer.css" rel="stylesheet" type="text/css"/>
+    <link href="css/menu-responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="Style_Theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <header>
         <div class="logo-area">
             <img src="Imagenes/LOGO1.png" alt="Logo" class="logo"/>
         </div>
-        <nav class="menu">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="menu-principal">
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+            <span class="nav-toggle__barra"></span>
+        </button>
+        <nav class="menu" id="menu-principal">
+            <div class="menu-logo">
+                <img src="Imagenes/LOGO1.png" alt="Logo">
+            </div>
             <a href="index.html">Inicio</a>
             <a href="CATALOGO.html">Carta</a>
             <a href="Promociones.html">Promociones</a>
             <a href="Direccion.html">Ubicación</a>
             <a href="Registrarse.html">Registrarse</a>
         </nav>
+        <div id="nav-overlay" class="nav-overlay"></div>
     </header>
 
-    <div class="main">
-        <section class="carta">
+    <div class="main"><!--- Contenedor principal --->
+        <section class="carta"><!--- Sección de la carta de productos --->
 
             <div class="carta-header">
                 <h1>Carta</h1>
@@ -73,7 +84,7 @@
                 <button class="chip" id="verFavoritos">❤️ Ver favoritos</button>
             </div>
 
-            <div class="contenedor-productos">
+            <div class="contenedor-productos"><!--- Contenedor de productos --->
 
                 <!-- ===== CLÁSICOS ===== -->
                 <div class="card" data-id="1" data-nombre="Café Espresso" data-categoria="clasicos" data-estacion="invierno" data-precio="10" data-fecha="2025-01-10">
@@ -151,7 +162,7 @@
 
                 <div class="card" data-id="10" data-nombre="Frappé de Café" data-categoria="frio" data-estacion="verano" data-precio="16" data-fecha="2025-02-20">
                     <button class="fav-btn">♡</button>
-                    <img src="Especiales/%E2%80%94Pngtree%E2%80%94frappe coffee with cream swirl_21503505.png" alt="Frappé de Café"/>
+                    <img src="Especiales/frappecafe.png" alt="Frappé de Café"/>
                     <h3>Frappé de Café</h3>
                     <p class="text-card">Café licuado con hielo, cremoso y refrescante.</p>
                     <p>S/ 16.00</p>
@@ -184,7 +195,7 @@
 
                 <div class="card" data-id="14" data-nombre="Mocaccino" data-categoria="especiales" data-estacion="invierno" data-precio="13" data-fecha="2025-02-20">
                     <button class="fav-btn">♡</button>
-                    <img src="Calientes/pngtree-viennese-coffee-reminiscent-of-cafe-mocha-european-drink-that-contains-espresso-png-image_14593740.png" alt="Mocaccino"/>
+                    <img src="Calientes/mocachino.png" alt="Mocaccino"/>
                     <h3>Mocaccino</h3>
                     <p class="text-card">Café con chocolate y espuma de leche, dulce y envolvente.</p>
                     <p>S/ 13.00</p>
@@ -266,7 +277,7 @@
 
                 <div class="card" data-id="24" data-nombre="Jugo Natural" data-categoria="refrescante" data-estacion="all" data-precio="10" data-fecha="2025-02-20">
                     <button class="fav-btn">♡</button>
-                    <img src="Bebidas refrescantes/pngtree-a-picture-of-bunch-different-colored-fruit-juices-fresh-juice-assortment-png-image_15149208.png" alt="Jugo Natural"/>
+                    <img src="Bebidas refrescantes/jugos.png" alt="Jugo Natural"/>
                     <h3>Jugo Natural</h3>
                     <p class="text-card">Fresa, papaya, piña o naranja. 100% fruta natural.</p>
                     <p>S/ 10.00</p>
@@ -348,7 +359,7 @@
 
                 <div class="card" data-id="34" data-nombre="Shot extra de café" data-categoria="extras" data-estacion="all" data-precio="6" data-fecha="2025-02-20">
                     <button class="fav-btn">♡</button>
-                    <img src="Extras/pngtree-espresso-cup-with-a-rich-dark-coffee-shot-png-image_12511778.png" alt="Shot extra de café"/>
+                    <img src="Extras/espressocafee.png" alt="Shot extra de café"/>
                     <h3>Shot extra de café</h3>
                     <p class="text-card">Un shot adicional para intensificar tu bebida.</p>
                     <p>S/ 6.00</p>
@@ -356,7 +367,7 @@
 
                 <div class="card" data-id="35" data-nombre="Leche vegetal" data-categoria="extras" data-estacion="all" data-precio="6" data-fecha="2025-02-20">
                     <button class="fav-btn">♡</button>
-                    <img src="Extras/pngtree-oat-milk-in-clear-glass-with-oats-on-table-isolated-transparent-png-image_16536605_1.png" alt="Leche vegetal"/>
+                    <img src="Extras/leche.png" alt="Leche vegetal"/>
                     <h3>Leche vegetal</h3>
                     <p class="text-card">Avena, almendra o soja. Ideal para dietas plant-based.</p>
                     <p>S/ 6.00</p>
@@ -365,86 +376,144 @@
             </div>
         </section>
     </div>
+    <!-- MODAL DE PRODUCTO -->
+    <div class="modal-overlay" id="modalProducto" hidden>
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+            <button class="modal-cerrar" aria-label="Cerrar">✕</button>
+            <div class="modal-contenido"></div>
+        </div>
+    </div>
+
     <!--  agregar  -->
-  <footer class="f-pie">
-      <!--  agregar  -->
-    <div class="f-fila"> <!-- Ahora se llama fila porque agrupa las columnas -->
-        <!--  agregar -->
+<footer class="f-pie">
+    <div class="f-fila">
+        
         <div class="f-columna">
             <h2>Bruma Café</h2>
             <p>Disfruta del mejor café artesanal en un ambiente acogedor.</p>
         </div>
-<!--  agregar -->
+
         <div class="f-columna">
             <h3>Información</h3>
-            <p>📍 Calle 7 # 6-56, Frente al Parque Central</p>
-            <p>📞 +51 987 654 321</p>
+            <p>
+                <img src="Imagenes/mapas-y-banderas.png" alt="ubicacion" class="footer-icon"/>
+                Calle 7 # 6-56, Frente al Parque Central
+            </p>
+            <p>
+                <img src="Imagenes/telefono.png" alt="telefono" class="footer-icon"/>
+                +51 987 654 321
+            </p>
         </div>
-<!--  agregar  -->
+
         <div class="f-columna">
             <h3>Horario</h3>
-            <p>🕒 Lun - Vie: 7:00 - 21:00</p>
-            <p>🕒 Sáb - Dom: 8:00 - 22:00</p>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Lun - Vie: 7:00 - 21:00
+            </p>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Sáb - Dom: 8:00 - 22:00
+            </p>
         </div>
 
     </div>
-<!--  agregar  -->
+
     <div class="f-derechos">
         <hr>
         <p>© 2026 Bruma Café. Todos los derechos reservados.</p>
     </div>
 </footer>
-
     <!--  Script  -->
+    <script src="Scrip_catalogo.js"></script>
     <script>
-        const chips = document.querySelectorAll(".chip");
+        /* ==========================================================
+           ELEMENTOS Y ESTADO
+        ========================================================== */
+        const chips = Array.from(document.querySelectorAll(".chip"));
         const buscador = document.getElementById("buscador");
         const ordenar = document.getElementById("ordenar");
         const estacion = document.getElementById("estacion");
         const toggleOrden = document.getElementById("toggleOrden");
+        const verFavoritosBtn = document.getElementById("verFavoritos");
+        const contenedor = document.querySelector(".contenedor-productos");
+        const cards = Array.from(document.querySelectorAll(".card"));
+        const modal = document.getElementById("modalProducto");
+        const modalContenido = modal.querySelector(".modal-contenido");
+
         let ascendente = true;
         let categoriaActiva = "all";
         let mostrandoFavoritos = false;
-
-        /* FAVORITOS desde localStorage */
         let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-        /* MARCAR favoritos al cargar */
-        document.querySelectorAll(".card").forEach(card => {
+        /* Comparadores de orden, usados por ordenarProductos() */
+        const comparadores = {
+            "nombre-asc": (a, b) => a.dataset.nombre.localeCompare(b.dataset.nombre),
+            "precio-asc": (a, b) => parseFloat(a.dataset.precio) - parseFloat(b.dataset.precio),
+            "fecha-desc": (a, b) => new Date(b.dataset.fecha) - new Date(a.dataset.fecha),
+        };
+
+        /* ==========================================================
+           UTILIDADES
+        ========================================================== */
+
+        /* Debounce genérico para no filtrar en cada tecla */
+        const debounce = (fn, delay = 200) => {
+            let timeoutId;
+            return (...args) => {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => fn(...args), delay);
+            };
+        };
+
+        /* ==========================================================
+           FAVORITOS
+        ========================================================== */
+        const animarCorazon = (btn) => {
+            btn.classList.remove("pop");
+            void btn.offsetWidth; // fuerza el re-render para que funcione si se hace click rápido
+            btn.classList.add("pop");
+            btn.addEventListener("animationend", () => btn.classList.remove("pop"), { once: true });
+        };
+
+        const toggleFavorito = (id, btn) => {
+            if (favoritos.includes(id)) {
+                favoritos = favoritos.filter(f => f !== id);
+                btn.classList.remove("activo");
+                btn.textContent = "♡";
+            } else {
+                favoritos.push(id);
+                btn.classList.add("activo");
+                btn.textContent = "❤";
+            }
+            localStorage.setItem("favoritos", JSON.stringify(favoritos));
+            animarCorazon(btn); // ahora SÍ se dispara solo al hacer click, no al cargar la página
+            if (mostrandoFavoritos) filtrar();
+        };
+
+        /* Marcar favoritos guardados al cargar (sin animación) */
+        cards.forEach(card => {
             const id = card.dataset.id;
             const btn = card.querySelector(".fav-btn");
             if (favoritos.includes(id)) {
                 btn.classList.add("activo");
                 btn.textContent = "❤";
             }
-            btn.addEventListener("click", () => {
-                if (favoritos.includes(id)) {
-                    favoritos = favoritos.filter(f => f !== id);
-                    btn.classList.remove("activo");
-                    btn.textContent = "♡";
-                } else {
-                    favoritos.push(id);
-                    btn.classList.add("activo");
-                    btn.textContent = "❤";
-                }
-                localStorage.setItem("favoritos", JSON.stringify(favoritos));
-                if (mostrandoFavoritos) filtrar();
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation(); // evita que también se abra el modal
+                toggleFavorito(id, btn);
             });
-                        btn.classList.remove("pop");
-            void btn.offsetWidth; // fuerza el re-render para que funcione si se hace click rápido
-            btn.classList.add("pop");
-            btn.addEventListener("animationend", () => btn.classList.remove("pop"), { once: true });
         });
 
-        /* VER FAVORITOS */
-        document.getElementById("verFavoritos").addEventListener("click", () => {
+        verFavoritosBtn.addEventListener("click", () => {
             mostrandoFavoritos = !mostrandoFavoritos;
-            const btn = document.getElementById("verFavoritos");
-            btn.classList.toggle("activo", mostrandoFavoritos);
+            verFavoritosBtn.classList.toggle("activo", mostrandoFavoritos);
             filtrar();
         });
 
-        /* CAMBIO DE CATEGORÍA */
+        /* ==========================================================
+           CATEGORÍAS
+        ========================================================== */
         chips.forEach(btn => {
             if (btn.id === "verFavoritos") return;
             btn.addEventListener("click", () => {
@@ -452,28 +521,19 @@
                 btn.classList.add("activo");
                 categoriaActiva = btn.dataset.cat;
                 mostrandoFavoritos = false;
-                document.getElementById("verFavoritos").classList.remove("activo");
+                verFavoritosBtn.classList.remove("activo");
                 filtrar();
             });
         });
 
-        /* TOGGLE ORDEN */
-        toggleOrden.addEventListener("click", () => {
-            ascendente = !ascendente;
-            toggleOrden.textContent = ascendente ? "↑" : "↓";
-            ordenarProductos();
-        });
-
-        estacion.addEventListener("change", filtrar);
-        buscador.addEventListener("input", filtrar);
-        ordenar.addEventListener("change", ordenarProductos);
-
-        /* FILTRAR */
-        function filtrar() {
+        /* ==========================================================
+           FILTRAR Y ORDENAR
+        ========================================================== */
+        const filtrar = () => {
             const texto = buscador.value.toLowerCase();
             const filtroEstacion = estacion.value;
 
-            document.querySelectorAll(".card").forEach(p => {
+            cards.forEach(p => {
                 const nombre = (p.dataset.nombre || "").toLowerCase();
                 const categoria = p.dataset.categoria || "";
                 const est = p.dataset.estacion || "";
@@ -484,31 +544,78 @@
                 const okEstacion = filtroEstacion === "all" || est === filtroEstacion || est === "all";
                 const okFav = !mostrandoFavoritos || favoritos.includes(id);
 
-                p.style.display = (okTexto && okCat && okEstacion && okFav) ? "" : "none";
+                p.classList.toggle("oculto", !(okTexto && okCat && okEstacion && okFav));
             });
 
             ordenarProductos();
-        }
+        };
 
-        /* ORDENAR */
-        function ordenarProductos() {
-            const contenedor = document.querySelector(".contenedor-productos");
+        const ordenarProductos = () => {
             if (!contenedor) return;
-            const productos = Array.from(contenedor.children);
+            const comparador = comparadores[ordenar.value] ?? (() => 0);
+            const productos = Array.from(contenedor.children)
+                .sort((a, b) => ascendente ? comparador(a, b) : -comparador(a, b));
 
-            productos.sort((a, b) => {
-                const tipo = ordenar.value;
-                let resultado = 0;
-               if (tipo === "precio-asc")   if (tipo === "nombre-asc") resultado = a.dataset.nombre.localeCompare(b.dataset.nombre);
-                if (tipo === "precio-asc") resultado = parseFloat(a.dataset.precio) - parseFloat(b.dataset.precio);
-                if (tipo === "fecha-desc") resultado = new Date(b.dataset.fecha) - new Date(a.dataset.fecha);
-                return ascendente ? resultado : -resultado;
-            });
+            /* DocumentFragment evita reflows innecesarios vs. innerHTML = "" */
+            const fragmento = document.createDocumentFragment();
+            productos.forEach(p => fragmento.appendChild(p));
+            contenedor.appendChild(fragmento);
+        };
 
-            contenedor.innerHTML = "";
-            productos.forEach(p => contenedor.appendChild(p));
-        }
+        toggleOrden.addEventListener("click", () => {
+            ascendente = !ascendente;
+            toggleOrden.textContent = ascendente ? "↑" : "↓";
+            ordenarProductos();
+        });
+
+        estacion.addEventListener("change", filtrar);
+        buscador.addEventListener("input", debounce(filtrar, 200));
+        ordenar.addEventListener("change", ordenarProductos);
+
+        /* ==========================================================
+           MODAL DE PRODUCTO
+        ========================================================== */
+        const abrirModal = (card) => {
+            const { nombre, precio } = card.dataset;
+            const img = card.querySelector("img").src;
+            const alt = card.querySelector("img").alt;
+            const desc = card.querySelector(".text-card").textContent;
+
+            modalContenido.innerHTML = `
+                <img src="${img}" alt="${alt}">
+                <h3 id="modalTitulo">${nombre}</h3>
+                <p class="text-card">${desc}</p>
+                <p class="precio">S/ ${parseFloat(precio).toFixed(2)}</p>
+            `;
+            modal.hidden = false;
+            document.body.style.overflow = "hidden";
+        };
+
+        const cerrarModal = () => {
+            modal.hidden = true;
+            document.body.style.overflow = "";
+        };
+
+        cards.forEach(card => card.addEventListener("click", (e) => {
+            if (e.target.closest(".fav-btn")) return; // el corazón no abre el modal
+            abrirModal(card);
+        }));
+
+        modal.querySelector(".modal-cerrar").addEventListener("click", cerrarModal);
+        modal.addEventListener("click", (e) => { if (e.target === modal) cerrarModal(); });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !modal.hidden) cerrarModal();
+        });
+
+        /* ==========================================================
+           INICIO
+        ========================================================== */
+        ordenarProductos();
     </script>
 
+    <script src="js/HamburgerMenu.js"></script>
+    <button id="theme-toggle" aria-label="Cambiar a modo oscuro">🌙</button>
+    <script src="theme-toggle.js"></script>
+    <script src="intro.js"></script>
 </body>
 </html>

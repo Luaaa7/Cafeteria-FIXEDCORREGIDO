@@ -1,90 +1,80 @@
-
-
-
-/* Encabezado */
-
-
- 
-
-/* Estilos globales */
+/* ============================
+   ESTILOS GLOBALES
+   ============================ */
 body{
-    font-family:'Arial'; 
-    margin:0;                       
-    padding:0;   /* Le quita el espacio o aumenta al texto */                   
-    color:#26382E;                   
-    background-color:#F5F1E9;        
-    height:100%; /*Altura*/
-    width:100%; 
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+    background-color: var(--bg-page);
+    height: 100%;
+    width: 100%;
 }
 
 /* Contenedor principal */
 .container{
-                 
-    margin:auto;             
-    padding:0px;                    
+    margin: auto;
+    padding: 0px;
 }
 
+/* ============================
+   BANNER PRINCIPAL
+   ============================ */
 .banner-img {
-    width: 100%; /*Ancho*/
-    height: 100vh; /* <--- CRÍTICO: Si no pones altura, el texto empuja la imagen hacia abajo */
-    
-    /* Imagen y capa oscura */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                /*Linear-gradient: crea un degradado de colores en línea recta*/
-                url('Imagenes/Imagen1_1.jpeg'); 
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%),
+                url('Imagenes/Imagen1_1.jpeg');
     background-size: cover;
     background-position: center;
-
-    /* CENTRADO TOTAL */
-    display: flex;           /* Convierte el div en un contenedor flexible */
-    justify-content: center; /* Centra el texto de izquierda a derecha */
-    align-items: center;     /* Centra el texto de ARRIBA a ABAJO */
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { filter: brightness(0); }
+    to { filter: brightness(1); }
 }
 
 .banner-text {
-    color: #F5F1E9; /* Tu color crema */
-    padding: 20px;
+    color: var(--text-on-dark);
+    padding: 10px;
 }
 
 .banner-text h1 {
-    font-size: 7rem;      
-    font-weight: bold;    /* negrita */
+    font-family: 'Fraunces', 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 7rem;
+    font-optical-sizing: auto;
+    font-style: italic;
     margin: 0;
 }
 
 .banner-text p {
-    font-size: 2rem;    /* Hace el subtítulo más legible */
+    font-size: 2rem;
 }
 
-/* Sección de contenido */
-.content1{
-    background-color:transparent; /* CAMBIO: Para que luzca el fondo crema del body */
-    margin: 40px auto;
-    padding: 40px 10%;               
-    display:flex;            
-    justify-content:center; 
-    align-items:flex-start; /*alinea los elementos al inicio del contenedor*/
-    gap:40px;               
-}
-/* Estilo para el título en Laptop */
-.content1 h1 {
-    font-size: 3rem; /* Tamaño grande para PC */
-    margin-bottom: 10px;
-    color: #2c1b0e; 
+/* ============================
+   SECCIÓN HERO / GANCHO INICIAL (content1)
+   ============================ */
+.content1 {
+    background-color: transparent;
+    margin: 0 auto;
+    padding: 80px 8% 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
 }
 
-/* Estilo para el párrafo en Laptop */
-.content1 p {
-    font-size: 1.5rem;
-    color: #4e342e;
-}
-
-.left-column,.right-column {
-    flex: 1; /* Toma la mitad del espacio */
+.left-column {
+    flex: 1;
     text-align: left;
-    position: relative;
-    align-self: center; /*centra un elemento específico*/
+    align-self: center;
 }
 
 .right-column {
@@ -92,334 +82,587 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.img2, .img3 {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 15px;
-    height: auto;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+.content1 h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin: 0 0 24px 0;
+    color: var(--text-primary);
 }
 
-
-.content2 {
-    background: #26382E;
-    color: #fff;
-    margin: 50px auto;
-    padding: 60px 10%;
-    text-align: center;
+.content1 p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 46ch;
+    margin: 0 0 20px 0;
+    color: var(--text-primary);
 }
 
-.content2 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px; /*Espacio debajo del elemento*/
+.content1 p strong {
+    color: var(--tan, inherit);
 }
 
-.cards-container {
+/* ============================
+   BOTONES (usados en content1 y content3)
+   ============================ */
+.contenedor-botones {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* Permite que bajen en celular automáticamente */
+    gap: 15px;
+    margin-top: 28px;
 }
 
-.card {
-    flex: 1;
-    min-width: 250px; /* Evita que las tarjetas sean demasiado flacas */
-    padding: 15px;
-}
-
-.card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #ede5e1;
-}
-
-.card-img{
-    width:30px; /* Tamaño del logo */
-    vertical-align:middle; /* Alinea el logo con el texto en la misma línea */
-}
-
-.content3 {
-  display: flex; /* Divide en dos columnas */
-  gap: 150px;
-  align-items: center;
-  font-family: sans-serif;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 60px 8%;
-}
-
-/* Contenido de texto */
-.content3 h1 { 
-    font-family: arial;
-    font-size: 3rem;
-    margin: 10px 0; 
-}
-
-.content3 p { 
-    font-family: arial;
-    font-size: 1.5rem;
-    margin: 10px 0; 
-}
-
-/* Fila de números */
-.fila-datos {
-  display: flex; 
-  gap: 30px; 
-  margin: 25px 0; 
-  border-top: 1px solid #ddd; 
-  padding-top: 15px;
-}
-
-/* Botón simple */
 .boton {
-  display: inline-block;
-  background: #26382E;
-  color: #F5F1E9;
-  padding: 12px 24px;
-  text-decoration: none; /*Eliminar decoraciones, subrayado de enlace*/
-  border-radius: 8px;
-  transition: 0.3s;
-  font-weight: bold;
+    display: inline-block;
+    background: var(--bg-header);
+    color: var(--text-on-dark);
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
 }
 
 .boton:hover {
-    background: #BFD9C3;
-    color: #26382E;
-    transform: scale(1.05); /*Scale deforma el elemento 1 tamaño normal, 5% más grande*/
+    background: var(--tan);
+    color: var(--text-primary);
+    transform: scale(1.05);
 }
 
-.contenedor-botones {
+.boton-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--bg-header);
+    padding: 12px 26px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.boton-outline:hover {
+    background: var(--bg-header);
+    color: var(--text-on-dark);
+    transform: scale(1.05);
+}
+
+/* ============================
+   IMÁGENES (content1 y content3)
+   ============================ */
+.img2 {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.img3 {
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.img2:hover, .img3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    cursor: pointer;
+}
+
+/* ============================
+   SECCIÓN DE DATOS (content3)
+   ============================ */
+.content3 {
     display: flex;
-    gap: 15px; /* Espacio entre los botones */
+    gap: 150px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 60px 8%;
+}
+
+.content3 h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.content3 p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.fila-datos {
+    display: flex;
+    gap: 30px;
+    margin: 25px 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+/* ============================
+   SECCIÓN MERCH / VASOS ADICIONALES
+   ============================ */
+.merch {
+    width: 100%;
+    box-sizing: border-box;   /* CAMBIO CLAVE: el padding ahora se resta, no se suma */
+    margin: 40px 0;
+    padding: 20px 8% 60px 8%;
+    text-align: center;
+    overflow-x: hidden;
+    background: var(--bg-header);
+    border-radius: 0;
+}
+
+.merch-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    color: var(--text-on-dark);
+    text-align: center;
+}
+
+.merch-header p {
+    font-size: 1.15rem;
+    color: var(--text-on-dark);
+    margin-bottom: 40px;
+}
+
+.merch-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.merch-card {
+    background: var(--bg-page);
+    border-radius: 16px;
+    flex: 1 1 0;
+    max-width: 320px;
+    min-width: 220px;
+    height: 640px;
+    padding: 30px 26px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.merch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+    background: var(--bg-header);
+}
+
+.merch-card:hover h3,
+.merch-card:hover .merch-features li,
+.merch-card:hover .merch-hint {
+    color: var(--text-on-dark);
+}
+
+.merch-visible h3 {
+    font-size: 1.6rem;
+    margin: 0 0 18px 0;
+    color: var(--text-primary);
+    transition: color 0.4s ease;
+}
+
+.merch-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    font-size: 1.1rem;
+    color: var(--text-secondary, var(--text-primary));
+    transition: color 0.4s ease;
+}
+
+.merch-features li {
+    padding: 6px 0;
+}
+
+.merch-features li::before {
+    content: "· ";
+    font-weight: bold;
+}
+
+.merch-hint {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-secondary, var(--text-primary));
+    transition: color 0.4s ease;
+    opacity: 0.7;
+}
+
+.merch-arrow {
+    font-style: normal;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.merch-card:hover .merch-arrow {
+    transform: rotate(180deg);
+}
+
+.merch-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
     margin-top: 20px;
 }
 
-/* LAPTOPS */
-@media (max-width:1024px){
-
-    .banner-text h1{
-        font-size:70px;
-    }
-
-    .banner-text p{
-        font-size:35px;
-    }
-    
-    .banner-img{
-        height:75vh;
-    }
-
-    .content1 h1,
-    .content3 h1{
-        font-size:35px;
-    }
-
-    .content1 p,
-    .content3 p{
-        font-size:19px;
-    }
-
-    .content2 h2{
-        font-size:38px;
-    }
-
-    .card h3{
-        font-size:24px;
-    }
-
-    .card p{
-        font-size:17px;
-    }
-
-    .fila-datos h2{
-        font-size:30px;
-    }
-
-    .fila-datos p{
-        font-size:17px;
-    }
-
-    .boton{
-        font-size:17px;
-    }
+.merch-card:hover .merch-body {
+    opacity: 1;
 }
 
+.merch-img-wrap {
+    width: 100%;
+    height: 280px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
 
-/* TABLETS */
-@media (max-width:768px){
+.merch-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 16px;
+    display: block;
+}
+
+.merch-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--tan, var(--text-on-dark));
+}
+
+.boton-sm {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+}
+/* ============================
+   LAPTOPS (1024px)
+   ============================ */
+@media (max-width: 1024px) {
 
     .banner-img{
-        height:55vh;
+        height: 75vh;
     }
 
     .banner-text h1{
-        font-size:45px;
+        font-size: 5rem;
     }
 
     .banner-text p{
-        font-size:18px;
-    }
-
-    .content1 h1,
-    .content3 h1{
-        font-size:32px;
-    }
-
-    .content1 p,
-    .content3 p{
-        font-size:17px;
-    }
-
-    .content2 h2{
-        font-size:30px;
-    }
-
-    .card h3{
-        font-size:21px;
-    }
-
-    .card p{
-        font-size:15px;
-    }
-
-    .fila-datos h2{
-        font-size:25px;
-    }
-
-    .fila-datos p{
-        font-size:15px;
-    }
-
-    .boton{
-        font-size:15px;
-        padding:12px 20px;
-    }
-
-    .img2,
-    .img3{
-        width:100%;
-        height:350px;
+        font-size: 1.8rem;
     }
 
     .content1,
     .content3{
-        flex-direction:column;
-        text-align:center;
-        gap:30px;
-    }
-
-    .fila-datos{
-    display:flex;
-    gap:20px;
-    }
-}
-
-/* CELULARES */
-@media (max-width:480px){
-
-    
-
-    .banner-img{
-        height:52vh;
-        background-position:center;
-    }
-
-    .banner-text h1{
-        font-size:50px;
-        line-height:1.2;
-    }
-
-    .banner-text p{
-        font-size:18px;
+        gap: 50px;
+        padding: 50px 6%;
     }
 
     .content1 h1,
     .content3 h1{
-        font-size:25px;
+        font-size: 2.5rem;
     }
 
     .content1 p,
     .content3 p{
-        font-size:15px;
-        line-height:1.6;
-    }
-
-    .content2 h2{
-        font-size:25px;
-    }
-
-    .card h3{
-        font-size:19px;
-    }
-
-    .card p{
-        font-size:14px;
+        font-size: 1.1rem;
     }
 
     .fila-datos h2{
-        font-size:22px;
+        font-size: 1.7rem;
     }
 
     .fila-datos p{
-        font-size:14px;
+        font-size: 1rem;
+    }
+}
+
+/* ============================
+   TABLETS (768px)
+   ============================ */
+@media (max-width: 768px) {
+
+    .banner-img{
+        height: 60vh;
+        background-attachment: scroll;
     }
 
-    .boton{
-        width:98%;
-        text-align:center;
-        font-size:14px;
-        padding:12px;
+    .banner-text h1{
+        font-size: 4.5rem;
+        line-height: 1.1;
     }
 
-    /* IMÁGENES MEJOR AJUSTADAS */
-    .img2,
-    .img3{
-        display:block; /*Para que ocupe toda la linea*/
-        width:100%;
-        max-width:360px;
-        aspect-ratio:4/3;
-        margin:0 auto;
-        object-fit:cover;  /*hace que la imagen llene el espacio sin deformarse*/
-        object-position:center; /*centra la imagen dentro del espacio*/
-        border-radius:15px;
+    .banner-text p{
+        font-size: 1.2rem;
     }
 
-    /* CONTENEDORES */
     .content1,
     .content3{
-        flex-direction:column;
-        align-items:center;
-        text-align:left;
-        gap:30px;
-        padding:35px 7%;
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 50px 8%;
     }
 
     .left-column,
     .right-column{
-        width:100%;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
+        width: 100%;
     }
 
-    .contenedor-botones{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        width:100%;
+    .content1 h1,
+    .content3 h1{
+        font-size: 2.2rem;
+    }
+
+    .content1 p,
+    .content3 p{
+        font-size: 1rem;
+        max-width: 100%;
+        margin: auto;
     }
 
     .fila-datos{
-        flex-direction:column;
-        text-align:center;
-        gap:15px;
-        flex-direction:row;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .img2,
+    .img3{
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+
+    .contenedor-botones{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .boton,
+    .boton-outline{
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* TARJETAS */
+    .merch-grid{
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .merch-card{
+        width: 85%;
+        max-width: 450px;
+        min-height: auto;
+        padding: 30px;
+    }
+
+    .merch-visible h3{
+        font-size: 1.4rem;
+    }
+
+    .merch-features{
+        font-size: 1rem;
+    }
+
+    .merch-hint{
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================
+   CELULARES (576px)
+   ============================ */
+@media (max-width: 576px){
+
+    .banner-img{
+        height: 50vh;
+    }
+
+    .banner-text h1{
+        font-size: 2.7rem;
+    }
+
+    .banner-text p{
+        font-size: 1rem;
+    }
+
+    .content1,
+    .content3{
+        padding: 40px 7%;
+        gap: 30px;
+    }
+
+    .content1 h1,
+    .content3 h1{
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    .content1 p,
+    .content3 p{
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .fila-datos{
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .contenedor-botones{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boton,
+    .boton-outline{
+        width: 100%;
+        text-align: center;
+    }
+
+    .img2,
+    .img3{
+        width: 100%;
+        max-width: 350px;
+        aspect-ratio: 4/3;
+    }
+
+    /* TARJETAS */
+    merch-card{
+        width: 90%;
+        max-width: 380px;
+        padding: 25px;
+    }
+
+    .merch-visible h3{
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
+
+    .merch-features{
+        font-size: 1rem;
+    }
+
+    .merch-img-wrap{
+        height: 220px;
+    }
+
+    .merch-price{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .boton-sm{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================
+   CELULARES PEQUEÑOS (380px)
+   ============================ */
+@media (max-width: 380px){
+
+    .banner-text h1{
+        font-size: 2.2rem;
+    }
+
+    .banner-text p{
+        font-size: 0.9rem;
+    }
+
+    .content1 h1,
+    .content3 h1{
+        font-size: 1.6rem;
+    }
+
+    .content1 p,
+    .content3 p{
+        font-size: 0.9rem;
+    }
+
+    .merch-card{
+        width: 92%;
+        padding: 22px;
+    }
+
+    .merch-visible h3{
+        font-size: 1.5rem;
+    }
+
+    .merch-features{
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .merch-hint{
+        font-size: 0.95rem;
+    }
+
+    .merch-img-wrap{
+        height: 180px;
+    }
+
+    .precio{
+        font-size: 1.1rem;
+    }
+
+    .boton-sm{
+        font-size: 0.9rem;
+        padding: 10px;
     }
 }

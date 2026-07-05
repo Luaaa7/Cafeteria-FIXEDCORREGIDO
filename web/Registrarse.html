@@ -13,6 +13,9 @@
     <link href="css/menu-responsive.css" rel="stylesheet" type="text/css"/>
     <link href="css/modal.css" rel="stylesheet" type="text/css"/>
     <link href="css/formulario-validacion.css" rel="stylesheet" type="text/css"/>
+    <link href="Style_Theme.css" rel="stylesheet" type="text/css"/>
+     <link href="css/toast.css" rel="stylesheet" type="text/css"/>
+
 </head>
 
 <body>
@@ -22,12 +25,15 @@
         <div class="logo-area">
             <img src="Imagenes/LOGO1.png" alt="Logo" class="logo"/>
         </div>
-        <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="menu-principal">
+         <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="menu-principal">
             <span class="nav-toggle__barra"></span>
             <span class="nav-toggle__barra"></span>
             <span class="nav-toggle__barra"></span>
         </button>
-        <nav class="menu" id="menu-principal">
+        <nav class="menu" id="menu-principal" data-menu>
+            <div class="menu-logo">
+                <img src="Imagenes/LOGO1.png" alt="Logo">
+            </div>
             <a href="index.html">Inicio</a>
             <a href="CATALOGO.html">Carta</a>
             <a href="Promociones.html">Promociones</a>
@@ -45,7 +51,7 @@
             <!-- LADO IZQUIERDO -->
             <div class="lado-decorativo">
                 <div class="tasa-animado">
-                   <img src="Imagenes\Tasa.png" alt="Tasa de café">
+                   <img src="Imagenes/Tasa.png" alt="Tasa de café">
                 </div>
             </div>
 
@@ -54,7 +60,7 @@
 
                 <h2 class="titulo-registro">REGISTRATE</h2>
 
-                <form class="formulario-cafe" novalidate>
+                <form class="formulario-cafe" novalidate data-validar>
 
                     <div class="campo">
                         <label class="etiqueta" for="campo-nombre">Nombre:</label>
@@ -102,32 +108,46 @@
     </main>
 
     <!-- FOOTER -->
+   
     <footer class="f-pie">
-        <div class="f-fila">
-            <div class="f-columna">
-                <h2>Bruma Café</h2>
-                <p>Disfruta del mejor café artesanal en un ambiente acogedor.</p>
-            </div>
-
-            <div class="f-columna">
-                <h3>Información</h3>
-                <p>📍 Calle 7 # 6-56, Frente al Parque Central</p>
-                <p>📞 +51 987 654 321</p>
-            </div>
-
-            <div class="f-columna">
-                <h3>Horario</h3>
-                <p>🕒 Lun - Vie: 7:00 - 21:00</p>
-                <p>🕒 Sáb - Dom: 8:00 - 22:00</p>
-            </div>
-
+    <div class="f-fila">
+        
+        <div class="f-columna">
+            <h2>Bruma Café</h2>
+            <p>Disfruta del mejor café artesanal en un ambiente acogedor.</p>
         </div>
 
-        <div class="f-derechos">
-            <hr>
-            <p>© 2026 Bruma Café. Todos los derechos reservados.</p>
+        <div class="f-columna">
+            <h3>Información</h3>
+            <p>
+                <img src="Imagenes/mapas-y-banderas.png" alt="ubicacion" class="footer-icon"/>
+                Calle 7 # 6-56, Frente al Parque Central
+            </p>
+            <p>
+                <img src="Imagenes/telefono.png" alt="telefono" class="footer-icon"/>
+                +51 987 654 321
+            </p>
         </div>
-    </footer>
+
+        <div class="f-columna">
+            <h3>Horario</h3>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Lun - Vie: 7:00 - 21:00
+            </p>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Sáb - Dom: 8:00 - 22:00
+            </p>
+        </div>
+
+    </div>
+
+    <div class="f-derechos">
+        <hr>
+        <p>© 2026 Bruma Café. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
     <!-- MODAL GENÉRICO (éxito / error del formulario) -->
     <div id="modal-generico" class="modal-overlay">
@@ -140,9 +160,15 @@
         </div>
     </div>
 
+    <!-- CONTENEDOR DE NOTIFICACIONES TOAST (usuario ya existente / registro exitoso) -->
+    <div id="toast-contenedor" aria-live="polite"></div>
+
     <script src="js/HamburgerMenu.js"></script>
     <script src="js/Modal.js"></script>
+     <script src="js/Toast.js"></script>
     <script src="js/FormValidator.js"></script>
+    <button id="theme-toggle" aria-label="Cambiar a modo oscuro">🌙</button>
+    <script src="theme-toggle.js"></script>
 </body>
 
 </html>

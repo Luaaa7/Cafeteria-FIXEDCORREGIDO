@@ -11,6 +11,8 @@
     <link href="Style_3_dinamico.css" rel="stylesheet" type="text/css"/>
     <link href="Style_Footer.css" rel="stylesheet" type="text/css"/>
     <link href="css/menu-responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="Style_Theme.css" rel="stylesheet" type="text/css"/>
+        <link href="css/promo-detalle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="container">
@@ -25,6 +27,9 @@
             <span class="nav-toggle__barra"></span>
         </button>
         <nav class="menu" id="menu-principal">
+            <div class="menu-logo">
+                <img src="Imagenes/LOGO1.png" alt="Logo">
+            </div>
             <a href="index.html">Inicio</a>
             <a href="CATALOGO.html">Carta</a>
             <a href="Promociones.html">Promociones</a>
@@ -154,7 +159,7 @@
 
                 <div class="promo-card" data-mes="4" data-nombre="Lluvia de Caramelo" data-categoria="cafe" data-precio="17.00" data-descuento="30">
                     <div class="promo-img-wrap">
-                        <img src="Calientes/pngtree-viennese-coffee-reminiscent-of-cafe-mocha-european-drink-that-contains-espresso-png-image_14593740.png"
+                        <img src="Calientes/mocachino.png"
                              alt="Café latte con caramelo y vainilla" loading="lazy">
                     </div>
                     <table>
@@ -347,33 +352,81 @@
     </main>
 
     <footer class="f-pie">
-        <div class="f-fila">
-            <div class="f-columna">
-                <h2>Bruma Café</h2>
-                <p>Disfruta del mejor café artesanal en un ambiente acogedor.</p>
-            </div>
-            <div class="f-columna">
-                <h3>Información</h3>
-                <p>📍 Calle 7 # 6-56, Frente al Parque Central</p>
-                <p>📞 +51 987 654 321</p>
-            </div>
-            <div class="f-columna">
-                <h3>Horario</h3>
-                <p>🕒 Lun – Vie: 7:00 – 21:00</p>
-                <p>🕒 Sáb – Dom: 8:00 – 22:00</p>
-            </div>
+    <div class="f-fila">
+        
+        <div class="f-columna">
+            <h2>Bruma Café</h2>
+            <p>Disfruta del mejor café artesanal en un ambiente acogedor.</p>
         </div>
-        <div class="f-derechos">
-            <hr>
-            <p>© 2026 Bruma Café. Todos los derechos reservados.</p>
+
+        <div class="f-columna">
+            <h3>Información</h3>
+            <p>
+                <img src="Imagenes/mapas-y-banderas.png" alt="ubicacion" class="footer-icon"/>
+                Calle 7 # 6-56, Frente al Parque Central
+            </p>
+            <p>
+                <img src="Imagenes/telefono.png" alt="telefono" class="footer-icon"/>
+                +51 987 654 321
+            </p>
         </div>
-    </footer>
+
+        <div class="f-columna">
+            <h3>Horario</h3>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Lun - Vie: 7:00 - 21:00
+            </p>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Sáb - Dom: 8:00 - 22:00
+            </p>
+        </div>
+
+    </div>
+
+    <div class="f-derechos">
+        <hr>
+        <p>© 2026 Bruma Café. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
 </div><!-- /container -->
+<div id="pd-overlay" class="pd-overlay">
+    <div class="pd-caja" role="dialog" aria-modal="true" aria-labelledby="pd-titulo-texto">
+        <button type="button" class="pd-cerrar" aria-label="Cerrar">&times;</button>
+
+        <img class="pd-imagen" src="" alt="">
+        <p class="pd-mes"></p>
+        <h3 id="pd-titulo-texto" class="pd-titulo"></h3>
+        <p class="pd-descripcion"></p>
+
+        <div class="pd-precios">
+            <span class="pd-precio-original"></span>
+            <span class="pd-precio-descuento"></span>
+            <span class="pd-descuento-badge"></span>
+        </div>
+
+        <!-- [RÚBRICA: Manipulación del DOM] Texto y color cambian según la fecha real -->
+        <div class="pd-countdown"></div>
+
+        <!-- [RÚBRICA: Formulario interactivo - Validación de datos + Mensajes de error] -->
+        <p class="pd-form-titulo">Avísame cuando esté por vencer</p>
+        <form class="pd-form" novalidate>
+            <input type="email" class="pd-input" placeholder="tu-correo@ejemplo.com" required>
+            <span class="pd-mensaje-error">Ingresa un correo electrónico válido.</span>
+            <button type="submit" class="pd-boton">Avisarme</button>
+        </form>
+        <p class="pd-mensaje-exito">Listo, te avisaremos antes de que termine esta promoción.</p>
+    </div>
+</div>
 
 <!-- SCRIPT EXTERNO -->
 <script src="Scrip_3.js"></script>
 
     <script src="js/HamburgerMenu.js"></script>
+    <script src="js/PromoDetalle.js"></script>
+    <button id="theme-toggle" aria-label="Cambiar a modo oscuro">🌙</button>
+    <script src="theme-toggle.js"></script>
 </body>
 </html>

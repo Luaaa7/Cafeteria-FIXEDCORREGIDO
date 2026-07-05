@@ -1,8 +1,8 @@
 
 /*Pie de pagina*/
 .f-pie {
-    background: #26382E;
-    color: #F5F1E9;
+    background: var(--bg-header);
+    color:var(--text-on-dark);
     padding: 20px 5%;
     font-family: 'Poppins', sans-serif;
 }
@@ -20,7 +20,7 @@
 }
 
 .f-pie h3 { 
-    color: #F5F1E9; 
+    color: var(--text-on-dark); 
     margin-bottom: 15px;  /*espacio abajo del elemento*/
 }
 
@@ -43,6 +43,14 @@
     /* Deja espacio debajo de la linea */
     margin-bottom: 8px; 
     opacity:0.6;
+}
+
+/* Clase para los iconos del footer */
+.footer-icon {
+    width: 20px;          /* Ajusta el tamaño según necesites */
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;    /* Espacio entre el icono y el texto */
 }
 
 /* TABLETS */

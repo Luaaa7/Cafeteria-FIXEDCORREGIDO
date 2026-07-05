@@ -1,26 +1,22 @@
-/* ================== BODY ================== */
-
-/* Estilos generales de toda la página */
+/* BODY */
 body {
-    font-family: 'Jost', 'Segoe UI', sans-serif; /* Fuente principal */
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
     margin: 0; /* Elimina márgenes externos */
-    padding: 0; /* Elimina espacios internos */
-    color: #26382E; /* Color principal del texto */
-    background-color: #F5F1E9; /* Color de fondo de la página */
+    padding: 0; /* Elim  color: var(--text-primary); /* Color principal del texto */
+    color: var(--text-primary); /* Color principal del texto */
+    background-color: var(--bg-page); 
     height:100%; /* Altura completa */
     width:100%;  /* Anchura completa */
 }
 
-/* ================== CONTENEDOR ================== */
-
+/* CONTENEDOR */
 /* Contenedor general */
 .container {
     width: 100%; /* Ocupa todo el ancho */
     margin: auto; /* Centra el contenido */
 }
 
-/* ================== BANNER ================== */
-
+/* BANNER */
 /* Imagen principal del banner */
 .banner-img {
     width: 100%; /* Ocupa todo el ancho */
@@ -41,13 +37,13 @@ body {
 
 /* Contenedor del texto dentro del banner */
 .banner-text {
-    color: #F5F1E9; /* Color del texto */
+     color: var(--text-on-dark); /* Color del texto */
     padding: 20px; /* Espaciado interno */
 }
 
 /* Título principal del banner */
 .banner-text h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif; /* Fuente elegante */
+    font-family: 'Playfair Display', Georgia, serif; /* Fuente elegante */
     font-size: 5rem; /* Tamaño grande */
     font-weight: 300; /* Grosor fino */
     letter-spacing: 0.06em; /* Espaciado entre letras */
@@ -60,10 +56,10 @@ body {
     font-weight: 300; /* Grosor ligero */
     letter-spacing: 0.1em; /* Separación de letras */
     margin-top: 10px; /* Espacio arriba */
-    color: #BFD9C3; /* Color verde claro */
+    color: var(--tan); /* Color verde claro */
 }
 
-/* ================== MAIN ================== */
+/* MAIN */
 
 /* Contenedor principal del contenido */
 .main {
@@ -72,7 +68,7 @@ body {
     padding: 0 32px 80px; /* Espaciado interno */
 }
 
-/* ================== TÍTULO ================== */
+/* TÍTULO */
 
 /* Sección del título de promociones */
 .Promociones_titulo {
@@ -83,7 +79,7 @@ body {
 /* Decoración antes del título */
 .Promociones_titulo::before {
     display: block;
-    color: #E5D7CC;
+    color: var(--text-primary);
     font-size: 1.1rem;
     letter-spacing: 0.3em;
     margin-bottom: 10px;
@@ -91,13 +87,13 @@ body {
 
 /* Título principal */
 .Promociones_titulo h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     
     /* Tamaño adaptable según pantalla */
     font-size: clamp(2rem, 5vw, 3.6rem);
 
     font-weight: 300;
-    color: #26382E;
+    color: var(--text-primary);
     letter-spacing: 0.04em;
     line-height: 1.15;
 }
@@ -105,13 +101,13 @@ body {
 /* Texto en cursiva dentro del título */
 .Promociones_titulo h1 em {
     font-style: italic;
-    color: #A86D49;
+color: #B8C9CF;
 }
 
 /* Texto descriptivo debajo del título */
 .text-carta {
     font-size: 0.95rem;
-    color: #667E6B;
+    color: var(--text-secondary);
     font-weight: 300;
     letter-spacing: 0.03em;
     max-width: 440px;
@@ -119,56 +115,17 @@ body {
     line-height: 1.7;
 }
 
-/* ================== SEPARADOR DECORATIVO ================== */
-
-/* Contenedor del separador */
-.divider-deco {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px; /* Espacio entre elementos */
-    margin: 16px auto 18px;
-}
-
-/* Líneas laterales del separador */
-.divider-deco::before,
-.divider-deco::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #E5D7CC);
-}
-
-/* Línea derecha invertida */
-.divider-deco::after {
-    background: linear-gradient(to left, transparent, #E5D7CC);
-}
-
-/* Punto central del separador */
-.divider-deco-inner {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%; /* Lo convierte en círculo */
-    background: #A86D49;
-}
-
-/* ================== GRID DE TARJETAS ================== */
-
+/* GRID DE TARJETAS */
 /* Contenedor de todas las tarjetas */
 .contenedor-tablas {
     display: grid; /* Activa CSS Grid */
-    
     /* 4 columnas iguales */
     grid-template-columns: repeat(4, 1fr);
-
     gap: 24px; /* Espacio entre tarjetas */
     margin-bottom: 60px;
 }
 
-/* ================== TARJETA ================== */
-
+/* TARJETA */
 /* Diseño de cada tarjeta */
 .promo-card {
     display: flex;
@@ -195,14 +152,14 @@ body {
     box-shadow: 0 12px 36px rgba(38,56,46,0.18);
 }
 
-/* ================== IMAGEN ================== */
+/* IMAGEN */
 
 /* Contenedor de la imagen */
 .promo-img-wrap {
     width: 100%;
     height: 160px;
 
-    background: linear-gradient(135deg, #F5F1E9, #E5D7CC);
+    background: linear-gradient(135deg, var(--bg-page), var(--bg-surface));
 
     display: flex;
     align-items: center;
@@ -232,7 +189,7 @@ body {
     filter: drop-shadow(0 12px 20px rgba(38,56,46,0.22));
 }
 
-/* ================== TABLA ================== */
+/* TABLA */
 
 /* Estilo general de la tabla */
 table {
@@ -266,7 +223,7 @@ thead {
 thead th {
     padding: 22px 18px 18px;
 
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
 
     font-size: 1.08rem;
     font-weight: 400;
@@ -327,7 +284,7 @@ tfoot td {
     line-height: 1.5;
 }
 
-/* ================== ANIMACIÓN ================== */
+/* ANIMACIÓN */
 
 /* Animación de aparición */
 @keyframes fadeUp {
@@ -345,9 +302,9 @@ tfoot td {
     }
 }
 
-/* ================== RESPONSIVE ================== */
+/* RESPONSIVE */
 
-/* ===== LAPTOPS ===== */
+/* LAPTOPS */
 @media (max-width: 1024px) {
 
     /* Reduce padding */
@@ -372,7 +329,7 @@ tfoot td {
     }
 }
 
-/* ===== TABLETS ===== */
+/* TABLETS */
 @media (max-width: 768px) {
 
     .main {
@@ -411,7 +368,7 @@ tfoot td {
     }
 }
 
-/* ===== CELULARES ===== */
+/* CELULARES */
 @media (max-width: 480px) {
 
     /* Banner más pequeño */
@@ -426,5 +383,257 @@ tfoot td {
 
     .banner-text p {
         font-size: 0.95rem;
+    }
+}
+
+/* CONTROLES JS */
+
+/* Wrapper de la sección de filtros */
+.controles-wrapper {
+    text-align: center;
+    margin: 0 auto 48px;
+    max-width: 820px;
+}
+
+/* Título de la sección */
+.controles-titulo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #A86D49;
+    margin-bottom: 20px;
+}
+
+/* Fila de selects */
+.controles-selects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+/* Grupo label + select */
+.ctrl-grupo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.ctrl-grupo label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #667E6B;
+}
+
+.ctrl-grupo select {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    padding: 9px 36px 9px 14px;
+    border: none;
+    border-bottom: 1.5px solid #C8B49E;
+    background: transparent;
+    color: #26382E;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23A86D49'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    min-width: 170px;
+    transition: border-color 0.2s;
+}
+
+.ctrl-grupo select:focus { border-bottom-color: #26382E; }
+
+/* Separador vertical entre selects */
+.ctrl-sep {
+    width: 1px;
+    height: 36px;
+    background: #E5D7CC;
+    align-self: flex-end;
+    margin-bottom: 2px;
+}
+
+/* Línea decorativa entre selects y botones */
+.controles-linea {
+    width: 48px;
+    height: 1px;
+    background: #E5D7CC;
+    margin: 18px auto;
+}
+
+/* Fila de botones */
+.controles-btns {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Botón estilo texto elegante */
+.btn-js {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #667E6B;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.btn-js::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #A86D49;
+    transition: width 0.3s;
+}
+
+.btn-js:hover { color: #A86D49; }
+.btn-js:hover::after { width: 100%; }
+
+/* Separador entre botones */
+.btn-sep {
+    color: #C8B49E;
+    font-size: 0.75rem;
+    align-self: center;
+    user-select: none;
+}
+
+/* Imagen de tarjeta destacada con esquinas redondeadas */
+.promo-card.destacada .promo-img-wrap {
+    border-radius: 16px 16px 0 0;
+}
+
+/* Esquinas inferiores de tarjeta destacada */
+.promo-card.destacada table {
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+}
+
+/* SELECTOR DE FESTIVIDADES - ESTILOS PARA CLIENTE */
+/* VARIABLES CSS PARA FESTIVIDADES */
+:root {
+    --loyalty-primary: #A86D49;
+    --loyalty-secondary: #26382E;
+    --loyalty-bg: #F5F1E9;
+    --loyalty-text: #26382E;
+    --loyalty-border: #E5D7CC;
+    --loyalty-shadow: rgba(38, 56, 46, 0.1);
+}
+
+/* JULIO - Fiestas Patrias */
+body.tema-julio {
+    --loyalty-primary: #C41E3A;
+    --loyalty-secondary: #FFFFFF;
+}
+
+/* OCTUBRE - Señor de los Milagros */
+body.tema-octubre {
+    --loyalty-primary: #663399;
+    --loyalty-secondary: #663399;
+}
+
+/* NOVIEMBRE - Canción Criolla */
+body.tema-noviembre {
+    --loyalty-primary: #8B4513;
+    --loyalty-secondary: #5C3317;
+}
+
+/* DICIEMBRE - Navidad */
+body.tema-diciembre {
+    --loyalty-primary: #0F7938;
+    --loyalty-secondary: #0F7938;
+}
+
+/* SELECTOR DE FESTIVIDAD */
+.festividad-selector {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 35px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 16px var(--loyalty-shadow);
+    border-left: 5px solid var(--loyalty-primary);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.festividad-selector h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--loyalty-primary);
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.form-group {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #667E6B;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.form-group select {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 14px;
+    border: 2px solid var(--loyalty-border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: white;
+    color: var(--loyalty-text);
+    cursor: pointer;
+    min-width: 280px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--loyalty-primary);
+    box-shadow: 0 0 0 3px rgba(168, 109, 73, 0.1);
+}
+
+/* RESPONSIVE FESTIVIDAD */
+@media (max-width: 768px) {
+    .festividad-selector {
+        padding: 20px;
+        margin: 25px auto;
+    }
+
+    .form-group select {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .festividad-selector h3 {
+        font-size: 1rem;
     }
 }

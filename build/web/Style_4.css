@@ -14,9 +14,12 @@
 body {
     margin: 0;
     /* Elimina márgenes automáticos */
-    font-family: Arial;
+    font-family: 'Poppins', sans-serif;
     /* Fuente principal */
-    background-color: #F5F1E9;
+     background:
+        radial-gradient(circle at 12% 15%, color-mix(in srgb, var(--tan) 28%, transparent), transparent 45%),
+        radial-gradient(circle at 88% 85%, color-mix(in srgb, var(--olive) 22%, transparent), transparent 45%),
+        var(--bg-page);
     /* Color de fondo */
     height:100%; /*Altura*/
     width:100%;    
@@ -44,8 +47,10 @@ body {
 
 /* CONTENEDOR GENERAL */
 .cuadro-registro {
+    position: relative;    /* Contiene al ::before decorativo (franja superior) */
+    overflow: hidden;    /* Evita que la franja o la taza se salgan de la tarjeta */
     width: 90%;    /* Ancho general */
-    background-color: #E5D7CC;    /* Fondo del cuadro */
+    background-color: var(--bg-surface);    /* Fondo del cuadro */
     padding: 40px;    /* Espaciado interno */
     border-radius: 20px;    /* Bordes redondeados */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);    /* Sombra suave */
@@ -54,7 +59,20 @@ body {
     align-items: center;    /* Centra verticalmente */
     gap: 40px;    /* Espacio entre columnas */
 }
-
+/* FRANJA SUPERIOR DECORATIVA - degradado con toda la paleta */
+.cuadro-registro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg,
+        var(--olive) 0%,
+        var(--burnt-orange) 35%,
+        var(--bg-header) 65%,
+        var(--tan) 100%);
+}
 /* FORMULARIO */
 .contenido-formulario {
     width: 420px;    /* Ancho fijo del formulario */
@@ -62,10 +80,26 @@ body {
 
 /* LADO IZQUIERDO */
 .lado-decorativo {
+    position: relative;    /* Contiene al ::before decorativo (halo de color) */
     flex: 1;          /* Ocupa el espacio restante */
     display: flex;    /* Activa flexbox */
     justify-content: center;    /* Centra horizontalmente */
     align-items: center;    /* Centra verticalmente */
+}
+/* BLOB DE COLOR detrás de la taza, con la paleta de acento */
+.lado-decorativo::before {
+    content: "";
+    position: absolute;
+    width: min(70%, 340px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        color-mix(in srgb, var(--olive) 55%, transparent) 0%,
+        color-mix(in srgb, var(--burnt-orange) 35%, transparent) 45%,
+        transparent 75%);
+    filter: blur(6px);
+    z-index: 0;
+    animation: flotarTaza 4s ease-in-out infinite alternate;
 }
 
 /* CONTENEDOR DE LA TAZA */
@@ -123,11 +157,26 @@ body {
         transform: translateY(-12px);        /* Sube ligeramente */
     }
 }
+/* BADGE - etiqueta decorativa arriba del título */
+.contenido-formulario::before {
+    content: "☕ Únete al club Bruma";
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-on-dark);
+    background: linear-gradient(90deg, var(--bg-header), var(--burnt-orange));
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(84, 71, 54, 0.35);
+}
 
 /* TITULO */
 .titulo-registro {
     overflow: hidden;    /* Oculta letras sobrantes */
-    border-right: 3px solid #26382E;
+    border-right: 3px solid var(--bg-header);
     /* Cursor */
     white-space: nowrap;
     /* Evita salto de línea */
@@ -137,11 +186,16 @@ body {
     /* Espaciado entre letras */
     width: 14ch;
     /* Cantidad visible */
+    color: var(--text-primary);
+    /* Color del texto acorde a la paleta */
+    background: linear-gradient(90deg, var(--text-primary), var(--burnt-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation:
         maquina 2s steps(11) forwards,        /* Escribe letra por letra */
         parpadeoCursor 0.75s step-end infinite;   /* Cursor parpadeante */
 }
-
 /* MAQUINA DE ESCRIBIR */
 @keyframes maquina {
     from {
@@ -162,7 +216,7 @@ body {
     }
 
     50% {
-        border-color: #26382E;        /* Visible */
+        border-color: var(--bg-header);       /* Visible */
     }
 }
 
@@ -184,7 +238,7 @@ body {
     margin-bottom: 8px;
     /* Espacio debajo */
 
-    color: #26382E;
+    color: var(--text-primary);
     /* Color del texto */
 }
 
@@ -200,11 +254,16 @@ body {
     border-radius: 10px;
     /* Bordes redondeados */
 
-    border: 2px solid transparent;
-    /* Borde invisible */
+    border: 2px solid var(--border-color);
+    /* Borde sutil visible */
+    border-left: 4px solid var(--border-color);
+    /* Acento izquierdo */
 
-    background-color: #F5F1E9;
+    background-color: var(--bg-page);
     /* Fondo claro */
+
+    color: var(--text-primary);
+    /* Color de texto legible */
 
     box-shadow:
         0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -214,6 +273,9 @@ body {
 
         border .3s ease-in-out,
         /* Transición del borde */
+
+        box-shadow .3s ease,
+        /* Transición del resplandor */
 
         transform .3s ease;
     /* Transición del tamaño */
@@ -225,7 +287,7 @@ body {
 /* FOCUS */
 .input-form:focus {
 
-    border-color: #8FAF9C;
+    border-color: var(--bg-header);
     /* Color del borde */
 
     transform: scale(1.02);
@@ -238,20 +300,40 @@ body {
     font-size: 0.9rem;
     /* Tamaño del texto interno */
 }
+/* FOCUS */
+.input-form:focus {
 
+    border-color: var(--olive);
+    /* Color del borde */
+    border-left-color: var(--burnt-orange);
+    /* Acento izquierdo destacado */
+
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--olive) 25%, transparent);
+    /* Resplandor suave alrededor */
+
+    transform: scale(1.02);
+    /* Agranda ligeramente */
+}
+
+/* PLACEHOLDER */
+.input-form::placeholder {
+
+    font-size: 0.9rem;
+    /* Tamaño del texto interno */
+}
 
 /* BOTON */
 .boton-enviar {
     width: 100%;
     /* Ancho completo */
 
-    background-color: #A2B5A4;
-    /* Fondo inicial */
+    background: linear-gradient(90deg, var(--olive) 0%, var(--burnt-orange) 100%);
+    /* Fondo degradado con la paleta */
 
-    color: black;
+    color: var(--text-on-dark);
     /* Color del texto */
 
-    padding: 14px;
+    padding: 15px;
     /* Espacio interno */
 
     border: none;
@@ -278,10 +360,18 @@ body {
     font-weight: bold;
     /* Negrita */
 
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--burnt-orange) 40%, transparent);
+    /* Sombra de color a juego */
+
     transition:
 
         color .3s ease,
         /* Transición color */
+
+        box-shadow .3s ease,
+        /* Transición de sombra */
 
         transform .3s ease;
     /* Transición movimiento */
@@ -296,7 +386,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #4d6d5d;    /* Color de animación */
+    background: linear-gradient(90deg, var(--bg-header) 0%, var(--tan) 100%);    /* Color de animación */
     transform: scaleX(0);    /* Empieza oculto */
     transform-origin: left;    /* Sale desde izquierda */
     transition: transform 0.3s ease-in-out;    /* Velocidad */
@@ -313,8 +403,11 @@ body {
 /* HOVER BOTON */
 .boton-enviar:hover {
 
-    color: white;
-    /* Texto blanco */
+    color: var(--text-on-dark);
+    /* Texto claro */
+
+    box-shadow: 0 12px 26px color-mix(in srgb, var(--bg-header) 45%, transparent);
+    /* Sombra más intensa al hover */
 
     transform: translateY(-2px);
     /* Levanta el botón */

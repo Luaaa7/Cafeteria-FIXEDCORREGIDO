@@ -1,18 +1,15 @@
 /* BODY */
-
-/* Estilos generales de toda la página */
 body {
     font-family: 'Poppins', sans-serif; /* Fuente principal */
     margin: 0; /* Elimina márgenes externos */
-    padding: 0; /* Elimina espacios internos */
-    color: #26382E; /* Color principal del texto */
-    background-color: #F5F1E9; /* Color de fondo de la página */
+    padding: 0; /* Elim  color: var(--text-primary); /* Color principal del texto */
+    color: var(--text-primary); /* Color principal del texto */
+    background-color: var(--bg-page); 
     height:100%; /* Altura completa */
     width:100%;  /* Anchura completa */
 }
 
 /* CONTENEDOR */
-
 /* Contenedor general */
 .container {
     width: 100%; /* Ocupa todo el ancho */
@@ -20,7 +17,6 @@ body {
 }
 
 /* BANNER */
-
 /* Imagen principal del banner */
 .banner-img {
     width: 100%; /* Ocupa todo el ancho */
@@ -41,7 +37,7 @@ body {
 
 /* Contenedor del texto dentro del banner */
 .banner-text {
-    color: #F5F1E9; /* Color del texto */
+     color: var(--text-on-dark); /* Color del texto */
     padding: 20px; /* Espaciado interno */
 }
 
@@ -60,7 +56,7 @@ body {
     font-weight: 300; /* Grosor ligero */
     letter-spacing: 0.1em; /* Separación de letras */
     margin-top: 10px; /* Espacio arriba */
-    color: #BFD9C3; /* Color verde claro */
+    color: var(--tan); /* Color verde claro */
 }
 
 /* MAIN */
@@ -83,7 +79,7 @@ body {
 /* Decoración antes del título */
 .Promociones_titulo::before {
     display: block;
-    color: #E5D7CC;
+    color: var(--text-primary);
     font-size: 1.1rem;
     letter-spacing: 0.3em;
     margin-bottom: 10px;
@@ -97,7 +93,7 @@ body {
     font-size: clamp(2rem, 5vw, 3.6rem);
 
     font-weight: 300;
-    color: #26382E;
+    color: var(--text-primary);
     letter-spacing: 0.04em;
     line-height: 1.15;
 }
@@ -105,13 +101,13 @@ body {
 /* Texto en cursiva dentro del título */
 .Promociones_titulo h1 em {
     font-style: italic;
-    color: #A86D49;
+color: #B8C9CF;
 }
 
 /* Texto descriptivo debajo del título */
 .text-carta {
     font-size: 0.95rem;
-    color: #667E6B;
+    color: var(--text-secondary);
     font-weight: 300;
     letter-spacing: 0.03em;
     max-width: 440px;
@@ -120,20 +116,16 @@ body {
 }
 
 /* GRID DE TARJETAS */
-
 /* Contenedor de todas las tarjetas */
 .contenedor-tablas {
     display: grid; /* Activa CSS Grid */
-    
     /* 4 columnas iguales */
     grid-template-columns: repeat(4, 1fr);
-
     gap: 24px; /* Espacio entre tarjetas */
     margin-bottom: 60px;
 }
 
 /* TARJETA */
-
 /* Diseño de cada tarjeta */
 .promo-card {
     display: flex;
@@ -167,7 +159,7 @@ body {
     width: 100%;
     height: 160px;
 
-    background: linear-gradient(135deg, #F5F1E9, #E5D7CC);
+    background: linear-gradient(135deg, var(--bg-page), var(--bg-surface));
 
     display: flex;
     align-items: center;
@@ -536,10 +528,7 @@ tfoot td {
     overflow: hidden;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════════
-   SELECTOR DE FESTIVIDADES - ESTILOS PARA CLIENTE
-   ═══════════════════════════════════════════════════════════════════════════════════ */
-
+/* SELECTOR DE FESTIVIDADES - ESTILOS PARA CLIENTE */
 /* VARIABLES CSS PARA FESTIVIDADES */
 :root {
     --loyalty-primary: #A86D49;

@@ -24,6 +24,7 @@
           rel="stylesheet"
           type="text/css"/>
     <link href="css/menu-responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="Style_Theme.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -40,6 +41,9 @@
             <span class="nav-toggle__barra"></span>
         </button>
         <nav class="menu" id="menu-principal">
+        <div class="menu-logo">
+            <img src="Imagenes/LOGO1.png" alt="Logo">
+        </div>
         <a href="index.html">Inicio</a>
         <a href="CATALOGO.html">Carta</a>
         <a href="Promociones.html">Promociones</a>
@@ -255,9 +259,8 @@
 </section>
 
 <footer class="f-pie">
-
     <div class="f-fila">
-
+        
         <div class="f-columna">
             <h2>Bruma Café</h2>
             <p>Disfruta del mejor café artesanal en un ambiente acogedor.</p>
@@ -265,30 +268,38 @@
 
         <div class="f-columna">
             <h3>Información</h3>
-            <p>📍 Calle 7 # 6-56, Frente al Parque Central</p>
-            <p>📞 +51 987 654 321</p>
+            <p>
+                <img src="Imagenes/mapas-y-banderas.png" alt="ubicacion" class="footer-icon"/>
+                Calle 7 # 6-56, Frente al Parque Central
+            </p>
+            <p>
+                <img src="Imagenes/telefono.png" alt="telefono" class="footer-icon"/>
+                +51 987 654 321
+            </p>
         </div>
 
         <div class="f-columna">
             <h3>Horario</h3>
-            <p>🕒 Lun - Vie: 7:00 - 21:00</p>
-            <p>🕒 Sáb: 8:00 - 22:00 (Dom: Cerrado)</p>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Lun - Vie: 7:00 - 21:00
+            </p>
+            <p>
+                <img src="Imagenes/reloj.png" alt="reloj" class="footer-icon"/>
+                Sáb - Dom: 8:00 - 22:00
+            </p>
         </div>
 
     </div>
 
     <div class="f-derechos">
-
         <hr>
-
-        <p>
-            © 2026 Bruma Café. Todos los derechos reservados.
-        </p>
-
+        <p>© 2026 Bruma Café. Todos los derechos reservados.</p>
     </div>
-
 </footer>
 
     <script src="js/HamburgerMenu.js"></script>
+    <button id="theme-toggle" aria-label="Cambiar a modo oscuro">🌙</button>
+    <script src="theme-toggle.js"></script>
 </body>
 </html>
